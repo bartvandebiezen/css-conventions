@@ -294,13 +294,13 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 - Makes it easier to group them and to use autocomplete in development tools.
 
 **Right:**
-```css
+```less
 @font-family-monospace: ;
 @color-blue: ;
 ```
 
 **Wrong:**
-```css
+```less
 @monospace-font-family: ;
 @blue-color: ;
 ```
@@ -312,7 +312,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 - Use variables even for black or white.
 
 **Right:**
-```css
+```less
 @color-silver: rgb(50, 50, 50);
 @color-primary: @color-silver;
 @color-primary--90: lighten(@color-primary--100, 10%)
@@ -321,7 +321,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 ```
 
 **Wrong:**
-```css
+```less
 @color-primary: rgb(50, 50, 50);
 ```
 
@@ -345,7 +345,7 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 ```
 
 **Right:**
-```css
+```less
 @breakpoint-palm:       ~"only screen and (max-width:440px)";
 @breakpoint-palm--s:     ~"only screen and (max-width:320px)";
 @breakpoint-palm--m:     ~"only screen and (min-width:321px) and (max-width:380px)";
@@ -363,7 +363,7 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 ```
 
 **Wrong:**
-```css
+```less
 @breakpoint-small: ;
 @breakpoint-smedium: ;
 @breakpoint-medium: ;
@@ -469,7 +469,7 @@ selector selector {
 ```
 
 **Wrong:**
-```css
+```less
 selector {
 	property: value;
 	selector {
@@ -484,7 +484,7 @@ selector {
 - Nested pseudo-classes, pseudo-elements, media queries, and states should not be separated by one empty line.
 
 **Right:**
-```css
+```less
 selector {
 	property: value;
 	&:hover {
@@ -497,7 +497,7 @@ selector {
 ```
 
 **Wrong:**
-```css
+```less
 selector {
 	property: value;
 }
