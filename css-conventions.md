@@ -9,7 +9,7 @@
 1. vendors (e.g. Bootstrap, jQuery UI)
 2. vendor-overrides (to re-declare some vendor CSS, if needed)
 3. settings (variables and configs, e.g. colors, fonts, font-sizes)
-4. tools (e.g. mixins, functions)
+4. tools (e.g. mixins, functions, and utilities)
 5. reset (e.g. normalize.css and box-sizing)
 6. base (HTML elements, e.g. h1-h6 styles)
 7. layout (wrapping and constraining elements, e.g. grid, sections, body, header, footer)
@@ -583,7 +583,7 @@ selector {
 - Do not add line breaks for wrapping.
 
 **Right:**
-```css
+```less
 // # Colors
 
 @color-blue: rgb(0, 0, 255); // #0000ff
