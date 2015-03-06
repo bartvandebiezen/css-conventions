@@ -233,35 +233,35 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
 
 **Right:**
-```css
-selector--90 {
+```less
+.button--90 {
 	property: value;
 }
 
-selector {
+.button {
 	property: value;
 }
 
-selector--100 {
-	property: value;
+.button--100 {
+	.button;
 }
 
-selector--200 {
+.button--200 {
 	property: value;
 }
 ```
 
 **Wrong:**
 ```css
-selector--small {
+.button--small {
 	property: value;
 }
 
-selector--medium {
+.button--medium {
 	property: value;
 }
 
-selector--large {
+.button--large {
 	property: value;
 }
 ```
@@ -329,7 +329,7 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 
 ### Names of media queries should be based on human ergonomics.
 
-- There are major and minor ranges or breakpoints.
+- There are major and minor ranges.
 - Major ranges should be based on human ergonomics.
 - If human ergonomics is not directly applicable, describe media queries as objects close to the human body as possible.
 - Minor ranges (a.k.a. tweak points) are based on size differences within major ranges.
@@ -346,20 +346,20 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 
 **Right:**
 ```less
-@breakpoint-palm:       ~"only screen and (max-width:440px)";
-@breakpoint-palm--s:     ~"only screen and (max-width:320px)";
-@breakpoint-palm--m:     ~"only screen and (min-width:321px) and (max-width:380px)";
-@breakpoint-palm--l:     ~"only screen and (min-width:381px) and (max-width:440px)";
-@breakpoint-lap:        ~"only screen and (min-width:441px) and (max-width:1024px)";
-@breakpoint-lap--s:      ~"only screen and (min-width:441px) and (max-width:600px)";
-@breakpoint-lap--m:      ~"only screen and (min-width:601px) and (max-width:800px)";
-@breakpoint-lap--l:      ~"only screen and (min-width:801px) and (max-width:1024px)";
-@breakpoint-lap-and-up: ~"only screen and (min-width:441px)";
-@breakpoint-portable:   ~"only screen and (max-width:1024px)";
-@breakpoint-desk:       ~"only screen and (min-width:1025px)";
-@breakpoint-desk--s:     ~"only screen and (min-width:1025px) and (max-width:1200px)";
-@breakpoint-desk--m:     ~"only screen and (min-width:1201px) and (max-width:1600px)";
-@breakpoint-desk--l:     ~"only screen and (min-width:1601px)";
+@media-query-palm:       ~"only screen and (max-width:440px)";
+@media-query-palm--s:    ~"only screen and (max-width:320px)";
+@media-query-palm--m:    ~"only screen and (min-width:321px) and (max-width:380px)";
+@media-query-palm--l:    ~"only screen and (min-width:381px) and (max-width:440px)";
+@media-query-lap:        ~"only screen and (min-width:441px) and (max-width:1024px)";
+@media-query-lap--s:     ~"only screen and (min-width:441px) and (max-width:600px)";
+@media-query-lap--m:     ~"only screen and (min-width:601px) and (max-width:800px)";
+@media-query-lap--l:     ~"only screen and (min-width:801px) and (max-width:1024px)";
+@media-query-lap-and-up: ~"only screen and (min-width:441px)";
+@media-query-portable:   ~"only screen and (max-width:1024px)";
+@media-query-desk:       ~"only screen and (min-width:1025px)";
+@media-query-desk--s:    ~"only screen and (min-width:1025px) and (max-width:1200px)";
+@media-query-desk--m:    ~"only screen and (min-width:1201px) and (max-width:1600px)";
+@media-query-desk--l:    ~"only screen and (min-width:1601px)";
 ```
 
 **Wrong:**
@@ -374,7 +374,10 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 
 ## Selectors
 
-### Do not use ID's, use classes.
+### Never reference IDs from CSS files.
+
+- IDs are overly specific and unnecessary.
+- Performance difference between classes and IDs is irrelevant.
 
 **Right:**
 ```css
@@ -389,6 +392,12 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 	property: value;
 }
 ```
+
+See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further reading.
+
+### Never reference ‘js-‘ prefixed class names from CSS files.
+
+- Classes starting with js- are used exclusively for javascript files.
 
 ### Use states as separate classes and add them to existing selectors.
 
@@ -428,10 +437,6 @@ selector.is-empty {}
 	display: none;
 }
 ```
-
-### Never reference ‘js-‘ prefixed class names from CSS files.
-
-- Classes starting with js- are used exclusively for javascript files.
 
 ## Nesting
 
