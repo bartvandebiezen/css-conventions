@@ -9,10 +9,10 @@
 1. vendors (e.g. Bootstrap, jQuery UI)
 2. vendor-overrides (to re-declare some vendor CSS, if needed)
 3. settings (variables and configs, e.g. colors, fonts, font-sizes)
-4. tools (e.g. mixins, functions, and utilities)
+4. tools (e.g. mixins, functions, utilities)
 5. reset (e.g. normalize.css and box-sizing)
 6. base (HTML elements, e.g. h1-h6 styles)
-7. layout (wrapping and constraining elements, e.g. grid, sections, body, header, footer)
+7. layout (wrapping and constraining elements, e.g. grid, sections, body, page-header, page-footer)
 8. components (e.g. buttons, date selector, stepper)
 9. pages (page specific styles)
 10. overrides (hacks and things we are not proud of)
@@ -20,7 +20,7 @@
 ### Properties should be ordered based on functionality.
 
 - Increases readability, understanding, and the ability to find duplicate properties.
-- SASS or LESS includes should be placed above all properties within a rule. This is to improve readability and to make sure properties from includes cannot override specific properties.
+- Sass or Less includes should be placed above all properties within a rule. This is to improve readability and to make sure properties from includes cannot override specific properties.
 
 **Order should be:**
 
@@ -44,14 +44,14 @@ See [Zen CSS Properties](https://code.google.com/p/zen-coding/wiki/ZenCSSPropert
 - Requires less interaction.
 
 **Right:**
-```css
+```CSS
 selector {
 	property: value;
 }
 ```
 
 **Wrong:**
-```css
+```CSS
 selector {
  property: value;
 }
@@ -60,7 +60,7 @@ selector {
 ### Rules should be separated by one empty line.
 
 **Right:**
-```css
+```CSS
 selector {
 	property: value;
 }
@@ -71,7 +71,7 @@ selector {
 ```
 
 **Wrong:**
-```css
+```CSS
 selector {
 	property: value;
 }
@@ -90,7 +90,7 @@ selector {
 - Makes it easier to find and optimize selectors.
 
 **Right:**
-```css
+```CSS
 selector,
 selector {
 	property: value;
@@ -98,7 +98,7 @@ selector {
 ```
 
 **Wrong:**
-```css
+```CSS
 selector, selector {
 	property: value;
 }
@@ -109,7 +109,7 @@ selector, selector {
 - There is one exception: when there is a large amount of selectors with one specific property. Only then it is allowed to place selectors and properties on one line.
 
 **Right:**
-```css
+```CSS
 selector {
 	property: value;
 	property: value;
@@ -118,7 +118,7 @@ selector {
 ```
 
 **Wrong:**
-```css
+```CSS
 selector {
 	property: value; property: value;
 
@@ -129,7 +129,7 @@ selector {
 ### Strings should be quoted with a single quote.
 
 **Right:**
-```css
+```CSS
 selector {
 	font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial', sans-serif;
 	background-image: url('/images/image.jpg');
@@ -137,7 +137,7 @@ selector {
 ```
 
 **Wrong:**
-```css
+```CSS
 selector {
 	font-family: "Helvetica Neue Light", "Helvetica", "Arial", sans-serif;
 	font-family: Helvetica Neue Light, Helvetica, Arial, sans-serif;
@@ -148,14 +148,14 @@ selector {
 ### Value lists should be written on the same line.
 
 **Right:**
-```css
+```CSS
 selector {
 	font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial', sans-serif;
 }
 ```
 
 **Wrong:**
-```css
+```CSS
 selector {
 	font-family:
 		'Helvetica Neue Light',
@@ -183,12 +183,12 @@ selector {
 ### Write selectors in lowercase, and separate different words within a name with hyphens.
 
 **Right:**
-```css
+```CSS
 selector-name {}
 ```
 
 **Wrong:**
-```css
+```CSS
 SelectorName {}
 SELECTOR_NAME {}
 ```
@@ -203,7 +203,7 @@ SELECTOR_NAME {}
 - A block can be nested within another block if that block is often used by itself. The nested block has at least two class names: (1) the block name itself and (2) as an element of the surrounding block.
 
 **Right:**
-```css
+```CSS
 .block {}
 .block__element {}
 .block--modifier {}
@@ -233,7 +233,7 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
 
 **Right:**
-```less
+```Less
 .button--90 {
 	property: value;
 }
@@ -252,7 +252,7 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 ```
 
 **Wrong:**
-```css
+```CSS
 .button--small {
 	property: value;
 }
@@ -276,14 +276,14 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 - There is one exception: use 'nav' instead of 'navigation'.
 
 **Right:**
-```css
+```CSS
 .button {
 	property: value;
 }
 ```
 
 **Wrong:**
-```css
+```CSS
 .btn {
 	property: value;
 }
@@ -294,13 +294,13 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 - Makes it easier to group them and to use autocomplete in development tools.
 
 **Right:**
-```less
+```Less
 @font-family-monospace: ;
 @color-blue: ;
 ```
 
 **Wrong:**
-```less
+```Less
 @monospace-font-family: ;
 @blue-color: ;
 ```
@@ -308,11 +308,11 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 ### Names of variables for colors should be written both descriptive and functional.
 
 - Start with descriptive variables, then set functional variables.
-- City block sizes can be used for functional names. Higher number means darker, lower number means lighter. You can use LESS or SASS functions to control the variants, but it is also possible to use descriptive names for variants.
+- City block sizes can be used for functional names. Higher number means darker, lower number means lighter. You can use Less or Sass functions to control the variants, but it is also possible to use descriptive names for variants.
 - Use variables even for black or white.
 
 **Right:**
-```less
+```Less
 @color-silver: rgb(50, 50, 50);
 @color-primary: @color-silver;
 @color-primary--90: lighten(@color-primary--100, 10%)
@@ -321,7 +321,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 ```
 
 **Wrong:**
-```less
+```Less
 @color-primary: rgb(50, 50, 50);
 ```
 
@@ -345,7 +345,7 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 ```
 
 **Right:**
-```less
+```Less
 @media-query-palm:       ~"only screen and (max-width:440px)";
 @media-query-palm--s:    ~"only screen and (max-width:320px)";
 @media-query-palm--m:    ~"only screen and (min-width:321px) and (max-width:380px)";
@@ -363,7 +363,7 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 ```
 
 **Wrong:**
-```less
+```Less
 @breakpoint-small: ;
 @breakpoint-smedium: ;
 @breakpoint-medium: ;
@@ -380,14 +380,14 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 - Performance difference between classes and IDs is irrelevant.
 
 **Right:**
-```css
+```CSS
 .class {
 	property: value;
 }
 ```
 
 **Wrong:**
-```css
+```CSS
 #id {
 	property: value;
 }
@@ -403,12 +403,12 @@ See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further read
 
 - States differ from modifiers. Modifiers are timeless, states are temporarily.
 - States never contain global styling. Style states always in combination with other selectors.
-- States are allowed to be nested with LESS or SASS. Usage is similar to pseudo-classes and pseudo-elements.
+- States are allowed to be nested with Less or Sass. Usage is similar to pseudo-classes and pseudo-elements.
 - States always start with 'is'.
 - Preferred state names are listed below.
 
 **Right:**
-```css
+```CSS
 selector.is-visible {}
 selector.is-hidden {}
 selector.is-added {}
@@ -425,10 +425,11 @@ selector.is-dropped {}
 selector.is-selected {}
 selector.is-filled {}
 selector.is-empty {}
+selector.is-updating {}
 ```
 
 **Wrong:**
-```css
+```CSS
 .is-hidden {
 	display: none;
 }
@@ -452,15 +453,15 @@ selector.is-empty {}
 ```
 
 **Wrong:**
-```css
+```CSS
 .user-content table td p {
 	property: value;
 }
 ```
 
-### Do not nest rules with LESS or SASS.
+### Do not nest rules with Less or Sass.
 
-- Nesting rules with LESS or SASS makes it more difficult to optimize your CSS.
+- Nesting rules with Less or Sass makes it more difficult to optimize your CSS.
 
 **Right:**
 ```CSS
@@ -474,7 +475,7 @@ selector selector {
 ```
 
 **Wrong:**
-```less
+```Less
 selector {
 	property: value;
 	selector {
@@ -483,13 +484,13 @@ selector {
 }
 ```
 
-### Do nest pseudo-classes, pseudo-elements, media queries, and states with LESS or SASS.
+### Do nest pseudo-classes, pseudo-elements, media queries, and states with Less or Sass.
 
 - Makes sure style and behavior of the same selector are grouped.
 - Nested pseudo-classes, pseudo-elements, media queries, and states should not be separated by one empty line.
 
 **Right:**
-```less
+```Less
 selector {
 	property: value;
 	&:hover {
@@ -502,7 +503,7 @@ selector {
 ```
 
 **Wrong:**
-```less
+```Less
 selector {
 	property: value;
 }
@@ -522,17 +523,17 @@ selector:hover {
 
 ### Color units should be written in 'RGB' or 'RGBa'.
 
-- LESS or SASS should convert RGB to hex color codes to reduce file size.
+- Less or Sass should convert RGB to hex color codes to reduce file size.
 - RGB has the advantage over HSL, because it is better and more consistently available in other systems like brand guidelines, graphic applications, or color systems.
 
 **Right:**
-```css
+```CSS
 rgb(50, 50, 50);
 rgba(50, 50, 50, 0.2);
 ```
 
 **Wrong:**
-```css
+```CSS
 #FFF;
 #FFFFFF;
 white;
@@ -550,7 +551,7 @@ rgba(50,50,50,0.2);
 - Makes sure you don't get nummers like '0.29310344827586204em' (this is an actual used number).
 - Development time in pixels is much less.
 - Fonts and line-heights look more identical between browsers.
-- Sizes in ems are allowed, but only in specific cases: when it should actually be based on the current font-size. For example a max width of 30 ems to make sure lines never get to long.
+- Sizes in ems are allowed, but only in specific cases: when it should actually be based on the current font-size. For example a max width of 30 ems to make sure lines never get too long.
 
 See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.html#length-units) for further reading.
 
@@ -560,14 +561,14 @@ See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.htm
 - Hundreds are used to make sure we could add a new number if needed. But will probably never happen. If more z-index are needed, rethink your code.
 
 **Right:**
-```css
+```CSS
 selector {
 	z-index: 200;
 }
 ```
 
 **Wrong:**
-```css
+```CSS
 selector {
 	z-index: 248;
 }
@@ -579,23 +580,23 @@ selector {
 
 ## Comments
 
-### Use LESS/SASS commenting style '//' for comments pointless for debugging.
+### Use Less/Sass commenting style '//' for comments pointless for debugging.
 
-- Applicable for commenting code not visible in CSS, such as mixins, or variables. This is to make sure you don't have loose comments floating around in dev version: LESS/SASS style comments are also always compiled out.
+- Applicable for commenting code not visible in CSS, such as mixins, or variables. This is to make sure you don't have loose comments floating around in dev version: Less/Sass style comments are also always compiled out.
 - Comments outside rules should be separated by one empty line.
 - Do not add extra dividers to mark a comment. If needed, change your code coloring to identify comment blocks.
 - Use markdown within comments.
 - Do not add line breaks for wrapping.
 
 **Right:**
-```less
+```Less
 // # Colors
 
 @color-blue: rgb(0, 0, 255); // #0000ff
 ```
 
 **Wrong:**
-```css
+```CSS
 /* -- colors -- */
 @color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
@@ -603,8 +604,8 @@ selector {
 ### Use CSS commenting style '/* */' for comments usefull for debugging.
 
 - Applicable for commenting code visible in CSS, such as rules, selectors, properties, or values.
-- Preserve CSS style comments during compiling LESS or SASS code for dev versions.
-- CSS style comments should be removed during compiling LESS or SASS code for live versions.
+- Preserve CSS style comments during compiling Less or Sass code for dev versions.
+- CSS style comments should be removed during compiling Less or Sass code for live versions.
 - Comments outside rules should be separated by one empty line.
 - For comments outsides rules, start and end syntaxes should be on a separate line. Even for single line comments, because of consistency and making transitions between single and multi line (adding and removing lines) easier.
 - Comments inside rules can be written as 'single line comment': syntaxes and comment on the same line.
@@ -614,7 +615,7 @@ selector {
 - Do not add line breaks for wrapping.
 
 **Right:**
-```css
+```CSS
 /*
 # Heading 1
 Paragraph text with a [link](url).
@@ -630,7 +631,7 @@ selector {
 ```
 
 **Wrong:**
-```css
+```CSS
 /*===
 * -- Heading 1 --
 * Paragraph
@@ -643,7 +644,7 @@ selector {
 - Always start actions with a verb.
 
 **Right:**
-`````css
+```CSS
 selector {
 	property: value; /* Remove hack (after we stop Internet Explorer 9 support) */
 	property: red; /* Change value to blue (4 april 2015) */
