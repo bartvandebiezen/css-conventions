@@ -543,10 +543,10 @@ rgb(50,50,50);
 rgba(50,50,50,0.2);
 ```
 
-### Absolute sizes should be written in pixels.
+### Absolute sizes should be written in pixels instead of ems or rems.
 
 - A 'CSS px' is a reference pixel intended to scale in size depending on the 'typical' distance of an observer from the display.
-- Webbrowsers scale a design in pixels the same way they scale designs in em's or rem's. Zooming even triggers media queries based on pixels. Essentially, webbrowsers make the reference pixel larger or smaller.
+- Web browsers scale a design in pixels the same way they scale designs in em's or rem's. Zooming even triggers media queries based on pixels. Essentially, web browsers make the reference pixel larger or smaller.
 - Makes it easier to integrate images or other media formats based on pixels in your layout.
 - Makes sure you don't get nummers like '0.29310344827586204em' (this is an actual used number).
 - Development time in pixels is much less.
