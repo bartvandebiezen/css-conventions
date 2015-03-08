@@ -1,5 +1,7 @@
 # CSS & CSS Preprocessor Conventions
 
+Inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
+
 ## Grouping & Ordering
 
 ### Rules should be ordered based on specificity.
@@ -651,6 +653,13 @@ selector {
 ===*/
 ```
 
+### Never limit comment lines to 80 characters.
+
+- Some guidelines advice to limit lines to 80 characters for readability. Don't do this.
+- Line breaks have or should have semantic value.
+- Manually limiting line length adds unnecessary extra time for editing comments.
+- Set your editor to wrap lines instead.
+
 ### Write actions inside the CSS as: "Action (date/situation)".
 
 - Always include a date or situation when it should be changed.
@@ -663,7 +672,3 @@ selector {
 	property: red; /* Change value to blue (4 april 2015) */
 }
 ```
-
-## Further reading
-
-Guidelines are inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), [Zen CSS Properties](https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
