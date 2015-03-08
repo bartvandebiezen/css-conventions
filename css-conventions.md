@@ -20,7 +20,7 @@
 ### Properties should be ordered based on functionality.
 
 - Increases readability, understanding, and the ability to find duplicate properties.
-- Sass or Less includes should be placed above all properties within a rule. This is to improve readability and to make sure properties from includes cannot override specific properties.
+- Sass or Less includes should be placed first, before all properties within a rule. This is to improve readability and to assure properties from includes cannot override specific properties.
 
 **Order should be:**
 
@@ -85,7 +85,7 @@ selector {
 }
 ```
 
-### Selectors should be comma separated and on a separate line.
+### Selectors seperated by a comma should be placed on a separate line.
 
 - Makes it easier to find and optimize selectors.
 
@@ -106,7 +106,7 @@ selector, selector {
 
 ### Properties should be on a separate line.
 
-- There is one exception: when there is a large amount of selectors with one specific property. Only then it is allowed to place selectors and properties on one line.
+- One exception: when there is a large amount of selectors with one specific property. Only in this case it is allowed to place selectors and properties on a single line.
 
 **Right:**
 ```CSS
@@ -227,7 +227,7 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 ### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'.
 
 - The standard variant of a pattern gets the modifier '100'.
-- There are two standard variants, one with and one without a number. Especially useful when you start patterns without variants and you have to add variants later on in a project. You don't want to change all the names in your project.
+- There are two standard variants: with and without a number. Especially useful when you start patterns without variants and you have to add variants later on in a project. You don't want to change all the names in your project.
 - Smaller variants get the modifiers ’90', '80', '70',…
 - Large variants get the modifiers '200', '300',…
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
@@ -268,10 +268,10 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 
 See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfBruening/how-to-build-the-perfect-pattern-libraryy) for further reading.
 
-### Names of selectors or variables should be written in full.
+### Names of selectors or variables should be written out in full.
 
 - Don't shorten selector or variable names.
-- Shorter selector names could make it more difficult to understand selector names.
+- Shorter selector names could lead to misunderstandings.
 - Shorter selector names don't affect file size that much, because of GZIP.
 - There is one exception: use 'nav' instead of 'navigation'.
 
@@ -307,8 +307,8 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 
 ### Names of variables for colors should be written both descriptive and functional.
 
-- Start with descriptive variables, then set functional variables.
-- City block sizes can be used for functional names. Higher number means darker, lower number means lighter. You can use Less or Sass functions to control the variants, but it is also possible to use descriptive names for variants.
+- Start with descriptive variables, followed by the functional variables.
+- City block sizes may be used for functional names. Higher number means darker, lower number means lighter. You can use Less or Sass functions to control the variants. It is also possible to use descriptive names for variants.
 - Use variables even for black or white.
 
 **Right:**
@@ -331,7 +331,7 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 
 - There are major and minor ranges.
 - Major ranges should be based on human ergonomics.
-- If human ergonomics is not directly applicable, describe media queries as objects close to the human body as possible.
+- If human ergonomics is not directly applicable, describe media queries as objects as close as possible to the human body.
 - Minor ranges (a.k.a. tweak points) are based on size differences within major ranges.
 - Breakpoints should only be used if the content requires it.
 - Makes it easier to add new media queries in the future, for example 'couch', 'wrist', or 'glasses'.
@@ -487,7 +487,7 @@ selector {
 ### Do nest pseudo-classes, pseudo-elements, media queries, and states with Less or Sass.
 
 - Makes sure style and behavior of the same selector are grouped.
-- Nested pseudo-classes, pseudo-elements, media queries, and states should not be separated by one empty line.
+- Nested pseudo-classes, pseudo-elements, media queries, and states should not be separated by an empty line.
 
 **Right:**
 ```Less
@@ -549,7 +549,7 @@ rgba(50,50,50,0.2);
 - Web browsers scale a design in pixels the same way they scale designs in em's or rem's. Zooming even triggers media queries based on pixels. Essentially, web browsers make the reference pixel larger or smaller.
 - Makes it easier to integrate images or other media formats based on pixels in your layout.
 - Makes sure you don't get nummers like '0.29310344827586204em' (this is an actual used number).
-- Development time in pixels is much less.
+- Sizing in pixels reduces development time.
 - Fonts and line-heights look more identical between browsers.
 - Sizes in ems are allowed, but only in specific cases: when it should actually be based on the current font-size. For example a max width of 30 ems to make sure lines never get too long.
 
@@ -557,8 +557,8 @@ See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.htm
 
 ### Z-indexes are limited to 12 levels.
 
-- The z-index starts at -100 and is not higher than 1000. Steps are 100.
-- Hundreds are used to make sure we could add a new number if needed. But will probably never happen. If more z-index are needed, rethink your code.
+- The z-index starts at -100 and is limited to 1000. Steps are 100.
+- Steps of hundreds are used to allow adding additional numbers. But will probably never happen. If more z-index are needed, rethink your code.
 
 **Right:**
 ```CSS
@@ -582,8 +582,8 @@ selector {
 
 ### Use Less/Sass commenting style '//' for comments pointless for debugging.
 
-- Applicable for commenting code not visible in CSS, such as mixins, or variables. This is to make sure you don't have loose comments floating around in dev version: Less/Sass style comments are also always compiled out.
-- Comments outside rules should be separated by one empty line.
+- Applicable for commenting code not visible in CSS, such as mixins, or variables. It assures you don't have loose comments floating around in dev version: Less/Sass style comments are also always compiled out.
+- Comments outside rules should be separated by a single empty line.
 - Do not add extra dividers to mark a comment. If needed, change your code coloring to identify comment blocks.
 - Use markdown within comments.
 - Do not add line breaks for wrapping.
@@ -606,7 +606,7 @@ selector {
 - Applicable for commenting code visible in CSS, such as rules, selectors, properties, or values.
 - Preserve CSS style comments during compiling Less or Sass code for dev versions.
 - CSS style comments should be removed during compiling Less or Sass code for live versions.
-- Comments outside rules should be separated by one empty line.
+- Comments outside rules should be separated by a single empty line.
 - For comments outsides rules, start and end syntaxes should be on a separate line. Even for single line comments, because of consistency and making transitions between single and multi line (adding and removing lines) easier.
 - Comments inside rules can be written as 'single line comment': syntaxes and comment on the same line.
 - Do not add extra dividers to mark a section. If needed, change your code coloring to identify comment blocks.
