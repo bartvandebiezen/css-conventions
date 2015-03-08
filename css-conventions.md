@@ -106,7 +106,7 @@ selector, selector {
 
 ### Properties should be on a separate line.
 
-- One exception: when there is a large amount of selectors with one specific property. Only in this case it is allowed to place selectors and properties on a single line.
+- Exception: when there is a large amount of selectors with one specific property. Only in this case it is allowed to place selectors and properties on a single line.
 
 **Right:**
 ```CSS
@@ -147,10 +147,23 @@ selector {
 
 ### Value lists should be written on the same line.
 
+- Exception: only very long comma separated values, such as font-face url's and gradients, may be written on different lines to improve readability.
+
 **Right:**
 ```CSS
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-weight: 400;
+	font-style: normal;
+	src: url('../fonts/SourceSansPro/SourceSansPro-Regular.eot');
+	src: url('../fonts/SourceSansPro/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/SourceSansPro/SourceSansPro-Regular.woff2') format('woff2'),
+		 url('../fonts/SourceSansPro/SourceSansPro-Regular.woff') format('woff'),
+		 url('../fonts/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype');
+}
+
 selector {
-	font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial', sans-serif;
+	font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
 }
 ```
 
@@ -273,7 +286,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 - Don't shorten selector or variable names.
 - Shorter selector names could lead to misunderstandings.
 - Shorter selector names don't affect file size that much, because of GZIP.
-- There is one exception: use 'nav' instead of 'navigation'.
+- Exception: use 'nav' instead of 'navigation'.
 
 **Right:**
 ```CSS
