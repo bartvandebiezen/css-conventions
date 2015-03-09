@@ -1,6 +1,6 @@
 # CSS & CSS Preprocessor Conventions
 
-The goal of these conventions are to keep stylesheets reusable, maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. These conventions are inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
+The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. These conventions are inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
 
 ## Grouping & Ordering
 
@@ -24,16 +24,16 @@ The goal of these conventions are to keep stylesheets reusable, maintainable, tr
 
 **File names should be:**
 
-1. vendors: the original file name.
-2. vendor-overrides: the same as the vendor's file name.
+1. vendors: original file name.
+2. vendor-overrides: same as vendor's file name.
 3. fonts: name of typeface.
-4. settings: the name of the property.
-5. tools: the name of the function or mixin.
-6. reset: the original file name or function name.
+4. settings: name of property.
+5. tools: name of function or mixin.
+6. reset: original file name or function name.
 7. base: name of element or logical group of elements, e.g. headings, figure.
 8. layout: name of container or function.
 9. components: name of components or block.
-10. pages: name-of-page__name-of-block.
+10. pages: name of page or template.
 11. overrides: depends on type.
 
 ### Properties should be ordered based on functionality.
