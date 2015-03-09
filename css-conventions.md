@@ -52,7 +52,7 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 7. Visual properties
 8. Print
 
-See [Zen CSS Properties](https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn) for further reading. Tools like [CSScomb](http://csscomb.com) can be used to automate ordering.
+Tools like [CSScomb](http://csscomb.com) can be used to automate ordering.
 
 ## Spacing
 
