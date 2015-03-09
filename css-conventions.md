@@ -1,6 +1,6 @@
 # CSS & CSS Preprocessor Conventions
 
-Inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
+The goal of these conventions are to keep stylesheets reusable, maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. These conventions are inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
 
 ## Grouping & Ordering
 
@@ -10,14 +10,31 @@ Inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [c
 
 1. vendors (e.g. Bootstrap, jQuery UI)
 2. vendor-overrides (to re-declare some vendor CSS, if needed)
-3. settings (variables and configs, e.g. colors, fonts, font-sizes)
-4. tools (e.g. mixins, functions, utilities)
-5. reset (e.g. normalize.css and box-sizing)
-6. base (HTML elements, e.g. h1-h6 styles)
-7. layout (wrapping and constraining elements, e.g. grid, sections, body, page-header, page-footer)
-8. components (e.g. buttons, date selector, stepper)
-9. pages (page specific styles)
-10. overrides (hacks and things we are not proud of)
+3. fonts (font-facing)
+4. settings (variables and configs, e.g. colors, fonts families, font sizes)
+5. tools (e.g. mixins, functions, utilities)
+6. reset (e.g. normalize.css and box-sizing)
+7. base (HTML elements, e.g. h1-h6 styles)
+8. layout (wrapping and constraining elements, e.g. grid, sections, body, page-header, page-footer)
+9. components (e.g. buttons, date selector, stepper)
+10. pages (page specific styles)
+11. overrides (hacks and things we are not proud of)
+
+### For Less or Sass, use seperate files for different objects.
+
+**File names should be:**
+
+1. vendors: the original file name.
+2. vendor-overrides: the same as the vendor's file name.
+3. fonts: name of typeface.
+4. settings: the name of the property.
+5. tools: the name of the function or mixin.
+6. reset: the original file name or function name.
+7. base: name of element or logical group of elements, e.g. headings, figure.
+8. layout: name of container or function.
+9. components: name of components or block.
+10. pages: name-of-page__name-of-block.
+11. overrides: depends on type.
 
 ### Properties should be ordered based on functionality.
 
@@ -182,7 +199,6 @@ selector {
 
 ### Other spacing conventions
 
-- Add an empty line at end of file.
 - No spaces between property and colon.
 - Add a space between colon and value.
 - Remove spaces before and after a selector combinator.
@@ -192,6 +208,7 @@ selector {
 - Add a line break before closing brace.
 - Trim trailing spaces or tabs.
 - Align prefixes.
+- Add an empty line at end of file.
 
 ## Naming
 
@@ -222,9 +239,9 @@ SELECTOR_NAME {}
 .block {}
 .block__element {}
 .block--modifier {}
-.site-search {} // Block
-.site-search__field {} // Element
-.site-search--full {} // Modifier
+.site-search {} /* Block */
+.site-search__field {} /* Element */
+.site-search--full {} /* Modifier */
 .person {}
 .person__hand {}
 .person--female {}
@@ -593,6 +610,22 @@ selector {
 }
 ```
 
+### Avoid adding units to zero-values.
+
+**Right:**
+```CSS
+selector {
+	margin: 0;
+}
+```
+
+**Wrong:**
+```CSS
+selector {
+	margin: 0px;
+}
+```
+
 ## Comments
 
 ### Use Less/Sass commenting style '//' for comments pointless for debugging.
@@ -615,6 +648,18 @@ selector {
 /* -- colors -- */
 @color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
+
+### Link font weights to their correct CSS values.
+
+- 100 = hair
+- 200 = thin
+- 300 = light
+- 400 = normal (or regular, book)
+- 500 = medium
+- 600 = semi-bold (or demi-bold)
+- 700 = bold
+- 800 = black (or heavy)
+- 900 = ultra
 
 ### Use CSS commenting style '/* */' for comments usefull for debugging.
 
