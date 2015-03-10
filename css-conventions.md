@@ -659,7 +659,7 @@ selector {
 ```
 
 **Wrong:**
-```CSS
+```Less
 /* -- colors -- */
 @color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
