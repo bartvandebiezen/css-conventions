@@ -6,6 +6,9 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 
 ### Rules should be ordered based on specificity.
 
+- If you use Less or Sass you should create different directories for each group.
+- Never use sub-folders to group files within a group.
+
 **Order should be:**
 
 1. vendors (e.g. Bootstrap, jQuery UI)
@@ -14,10 +17,10 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 4. settings (variables and configs, e.g. colors, fonts families, font sizes)
 5. tools (e.g. mixins, functions, utilities)
 6. reset (e.g. normalize.css and box-sizing)
-7. base (HTML elements, e.g. h1-h6 styles)
-8. layout (wrapping and constraining elements, e.g. grid, sections, body, page-header, page-footer)
-9. components (e.g. buttons, date selector, stepper)
-10. pages (page specific styles)
+7. base (HTML tags or blocks without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
+8. layout (wrapping and constraining blocks, e.g. grid, chapter sections, body with a sticky footer)
+9. components (e.g. date selector, stepper, page-header, page-footer)
+10. pages (page specific styles. Before you add page specific styles, consider modified components)
 11. overrides (hacks and things we are not proud of)
 
 ### For Less or Sass, use seperate files for different objects.
@@ -626,6 +629,18 @@ selector {
 }
 ```
 
+### Link font weights to their correct CSS values.
+
+- 100 = hair
+- 200 = thin
+- 300 = light
+- 400 = normal (or regular, book)
+- 500 = medium
+- 600 = semi-bold (or demi-bold)
+- 700 = bold
+- 800 = black (or heavy)
+- 900 = ultra
+
 ## Comments
 
 ### Use Less/Sass commenting style '//' for comments pointless for debugging.
@@ -648,18 +663,6 @@ selector {
 /* -- colors -- */
 @color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
-
-### Link font weights to their correct CSS values.
-
-- 100 = hair
-- 200 = thin
-- 300 = light
-- 400 = normal (or regular, book)
-- 500 = medium
-- 600 = semi-bold (or demi-bold)
-- 700 = bold
-- 800 = black (or heavy)
-- 900 = ultra
 
 ### Use CSS commenting style '/* */' for comments usefull for debugging.
 
