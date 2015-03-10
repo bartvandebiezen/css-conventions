@@ -126,9 +126,9 @@ selector, selector {
 }
 ```
 
-### Properties should be on a separate line.
+### Declarations should be on a separate line.
 
-- Exception: when there is a large amount of selectors with one specific property. Only in this case it is allowed to place selectors and properties on a single line.
+- Exception: when there is a large amount of selectors with similar properties. Only in this case it is allowed to place selectors and declarations on a single line.
 
 **Right:**
 ```CSS
@@ -212,6 +212,13 @@ selector {
 - Trim trailing spaces or tabs.
 - Align prefixes.
 - Add an empty line at end of file.
+
+## Declarations
+
+### All declarations should end with a semi-colon. Even the last declaration within a rule.
+
+- Makes it easier to reorder declarations.
+- Removing the last semi-colon is needles optimization. Automate this with the compiler.
 
 ## Naming
 
