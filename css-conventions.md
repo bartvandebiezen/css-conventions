@@ -213,13 +213,6 @@ selector {
 - Align prefixes.
 - Add an empty line at end of file.
 
-## Declarations
-
-### All declarations should end with a semi-colon. Even the last declaration within a rule.
-
-- Makes it easier to reorder declarations.
-- Removing the last semi-colon is needles optimization. Automate this with the compiler.
-
 ## Naming
 
 ### Write selectors in lowercase, and separate different words within a name with hyphens.
@@ -560,6 +553,13 @@ selector:hover {
 	}
 }
 ```
+
+## Declarations
+
+### All declarations should end with a semi-colon. Even the last declaration within a rule.
+
+- Makes it easier to reorder declarations.
+- Removing the last semi-colon is needles optimization. Automate this with the compiler.
 
 ## Values
 
