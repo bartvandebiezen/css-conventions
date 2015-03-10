@@ -630,7 +630,7 @@ selector {
 
 ### Use Less/Sass commenting style '//' for comments pointless for debugging.
 
-- Applicable for commenting code not visible in CSS, such as mixins, or variables. It assures you don't have loose comments floating around in dev version: Less/Sass style comments are also always compiled out.
+- Applicable for commenting code not visible in CSS, such as mixins, or variables. It assures you don't have loose comments floating around in dev version: Less/Sass style comments are always compiled out.
 - Comments outside rules should be separated by a single empty line.
 - Do not add extra dividers to mark a comment. If needed, change your code coloring to identify comment blocks.
 - Use markdown within comments.
@@ -644,7 +644,7 @@ selector {
 ```
 
 **Wrong:**
-```CSS
+```Less
 /* -- colors -- */
 @color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
