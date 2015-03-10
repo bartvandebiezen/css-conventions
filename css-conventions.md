@@ -19,8 +19,8 @@ The goal of these conventions are to keep stylesheets reusable, maintainable, tr
 6. reset (e.g. normalize.css and box-sizing)
 7. base (HTML tags or blocks without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
 8. layout (wrapping and constraining blocks, e.g. grid, chapter sections, body with a sticky footer)
-9. components (e.g. date selector, stepper, page-header, page-footer, forms)
-10. pages (page specific styles. Note: prefer modified components)
+9. components (e.g. date selector, stepper, page-header, page-footer)
+10. pages (page specific styles. Before you add page specific styles, consider modified components)
 11. overrides (hacks and things we are not proud of)
 
 ### For Less or Sass, use seperate files for different objects.
