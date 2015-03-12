@@ -8,6 +8,7 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 
 - If you use Less or Sass you should create different directories for each group.
 - Never use sub-folders to group files within a group.
+- Rules within vendors, utilities, or layout are [immutable](http://csswizardry.com/2015/03/immutable-css/).
 
 **Order should be:**
 
@@ -17,8 +18,8 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 4. settings (variables and configs, e.g. colors, fonts families, font sizes)
 5. utilities (e.g. mixins, functions, tools)
 6. reset (e.g. normalize.css and box-sizing)
-7. base (HTML tags or blocks without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
-8. layout (wrapping and constraining blocks, e.g. grid, chapter sections, body with a sticky footer)
+7. base (HTML tags or objects without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
+8. layout (immutable wrapping and constraining objects, e.g. grid, drawer container, chapter sections, body with a sticky footer)
 9. components (e.g. date selector, stepper, page-header, page-footer)
 10. pages (page specific styles. Before you add page specific styles, consider modified components)
 11. overrides (hacks and things we are not proud of)
