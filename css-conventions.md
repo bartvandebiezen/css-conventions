@@ -1,6 +1,6 @@
 # CSS & CSS Preprocessor Conventions
 
-The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. These conventions are inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
+The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with.
 
 ## CSS Terminology
 
@@ -31,6 +31,7 @@ simple-selector > simple-selector {
 
 - If you use Less or Sass you should create different directories for each group.
 - Never use sub-folders to group files within a group.
+- Rules within vendors, utilities, or layout are [immutable](http://csswizardry.com/2015/03/immutable-css/).
 
 **Order should be:**
 
@@ -38,10 +39,10 @@ simple-selector > simple-selector {
 2. vendor-overrides (to re-declare some vendor CSS, if needed)
 3. fonts (font-facing)
 4. settings (variables and configs, e.g. colors, fonts families, font sizes)
-5. tools (e.g. mixins, functions, utilities)
+5. utilities (e.g. mixins, functions, tools)
 6. reset (e.g. normalize.css and box-sizing)
-7. base (HTML tags or blocks without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
-8. layout (wrapping and constraining blocks, e.g. grid, chapter sections, body with a sticky footer)
+7. base (HTML tags or objects without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
+8. layout (immutable wrapping and constraining objects, e.g. grid, drawer container, chapter sections, body with a sticky footer)
 9. components (e.g. date selector, stepper, page-header, page-footer)
 10. pages (page specific styles. Before you add page specific styles, consider modified components)
 11. overrides (hacks and things we are not proud of)
@@ -54,7 +55,7 @@ simple-selector > simple-selector {
 2. vendor-overrides: same as vendor's file name.
 3. fonts: name of typeface.
 4. settings: name of property.
-5. tools: name of function or mixin.
+5. utilities: name of function or mixin.
 6. reset: original file name or function name.
 7. base: name of element or logical group of elements, e.g. headings, figure.
 8. layout: name of container or function.
@@ -130,13 +131,14 @@ selector {
 }
 ```
 
-### Selectors seperated by a comma should be placed on a separate line.
+### Selectors, seperated by a comma, should be placed on separate lines.
 
 - Makes it easier to find and optimize selectors.
 
 **Right:**
 ```CSS
 selector,
+mini-selector mini-selector,
 selector {
 	property: value;
 }
@@ -225,17 +227,19 @@ selector {
 
 ### Other spacing conventions
 
-- No spaces between property and colon.
-- Add a space between colon and value.
-- Comma-separated property values should include a space after each comma.
-- Also add spaces after commas within e.g. rgb() values.
-- Remove spaces before and after a selector combinator.
-- Add a space between selector and opening brace.
-- Add a line break after the opening brace.
-- Remove spaces before selector delimiter.
-- Add a line break before closing brace.
-- Trim trailing spaces or tabs.
+- Remove spaces before and after a selector combinator (e.g. '>').
+- Remove spaces before selector delimiter (',').
+- Add a space between selector and opening brace ('{').
+- Add a line break after the opening brace ('{').
+- No spaces between property and colon (':').
+- Add a space between colon (':') and value.
+- Comma-separated values should include a space after each comma.
+- Comma-separated values within parentheses ('()') should include a space after each comma.
+- Parentheses ('()') should not be padded with spaces.
 - Align prefixes.
+- Add a trailing semi-colon (';') after the last declaration.
+- Add a line break before closing brace ('}').
+- Trim trailing spaces or tabs.
 - Add an empty line at end of file.
 
 ## Naming
@@ -261,6 +265,7 @@ SELECTOR_NAME {}
 - Modification means a different version of a block or element.
 - Modifiers are timeless. Use 'states' if a 'different version' is temporarily.
 - A block can be nested within another block if that block is often used by itself. The nested block has at least two class names: (1) the block name itself and (2) as an element of the surrounding block.
+- A class does not reflect the full trail of the DOM. Only one block or element is allowed within a class name.
 
 **Right:**
 ```CSS
@@ -281,6 +286,13 @@ SELECTOR_NAME {}
 .female-hand {}
 .left-hand {}
 ```
+
+**Wrong:**
+```CSS
+.block__element__element {}
+.block__block__element {}
+```
+
 
 See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) for further reading.
 
@@ -434,6 +446,27 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 
 ## Selectors
 
+### Name selectors with reusability in mind.
+
+- When you write a selector name for a new object, ask yourself if you could not only use this object multiple times in your current project but also in future projects.
+- Avoid names describing content or styling.
+
+**Right:**
+```CSS
+.menu-item {}
+.is-highlighted {}
+.chapter {}
+.drawer {}
+```
+
+**Wrong:**
+```CSS
+.menu-item-about-us {}
+.red {}
+.border-top {}
+.border-right {}
+```
+
 ### Never reference IDs from CSS files.
 
 - IDs are overly specific and unnecessary.
@@ -457,7 +490,13 @@ See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further read
 
 ### Never reference ‘js-‘ prefixed class names from CSS files.
 
-- Classes starting with js- are used exclusively for javascript files.
+- Classes starting with 'js-' are used exclusively for javascript files.
+
+### Never reference ‘test-‘ prefixed class names from CSS files.
+
+- Classes starting with 'test-' are used by e.g. Ruby logic.
+
+### Never reference ‘track-‘ prefixed class names from CSS files.
 
 ### Use states as separate classes and add them to existing selectors.
 
@@ -486,6 +525,8 @@ selector.is-selected {}
 selector.is-filled {}
 selector.is-empty {}
 selector.is-updating {}
+selector.is-loaded {}
+selector.is-loading {}
 ```
 
 **Wrong:**
@@ -660,6 +701,23 @@ selector {
 	margin: 0px;
 }
 ```
+### Always include a zero when a numeric value is less than 1.
+
+- Do not add trailing zero's.
+
+**Right:**
+```CSS
+selector {
+	margin: 0.5%;
+}
+```
+
+**Wrong:**
+```CSS
+selector {
+	margin: .50%;
+}
+```
 
 ### Link font weights to their correct CSS values.
 
@@ -703,7 +761,7 @@ selector {
 - CSS style comments should be removed during compiling Less or Sass code for live versions.
 - Comments outside rules should be separated by a single empty line.
 - For comments outsides rules, start and end syntaxes should be on a separate line. Even for single line comments, because of consistency and making transitions between single and multi line (adding and removing lines) easier.
-- Comments inside rules can be written as 'single line comment': syntaxes and comment on the same line.
+- Comments inside rules (a.k.a. inline comments) can be written as 'single line comment': syntaxes and comment on the same line.
 - Do not add extra dividers to mark a section. If needed, change your code coloring to identify comment blocks.
 - Do not indent comments or start every line with special characters such as *s.
 - Use markdown within comments.
@@ -733,6 +791,25 @@ selector {
 ===*/
 ```
 
+### Numbered labels may be used for inline comments.
+
+- Allowed when a rule contains inline comments that are too long to be readable.
+- Allowed when a comment is applicable for multiple declarations.
+- When using numbered labels for a rule, also use numbered labels for all other inline comments for that rule.
+
+**Right:**
+```CSS
+/*
+# Image
+1. Makes it responsive.
+*/
+
+img {
+	max-width: 100%; /* [1] */
+	height: auto; /* [1] */
+}
+```
+
 ### Never limit comment lines to 80 characters.
 
 - Some guidelines advice to limit lines to 80 characters for readability. Don't do this.
@@ -740,7 +817,7 @@ selector {
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
 
-### Write actions inside the CSS as: "Action (date/situation)".
+### Write to do's inside the CSS as: "TODO: action (date/situation)".
 
 - Always include a date or situation when it should be changed.
 - Always start actions with a verb.
@@ -748,7 +825,15 @@ selector {
 **Right:**
 ```CSS
 selector {
-	property: value; /* Remove hack (after we stop Internet Explorer 9 support) */
-	property: red; /* Change value to blue (4 april 2015) */
+	property: value; /* TODO: Remove hack (after we stop Internet Explorer 9 support) */
+	property: red; /* TODO: Change value to blue (4 april 2015) */
 }
 ```
+
+## Acknowledgements and Further Reading
+
+- [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting)
+- [cssguidelin.es](http://cssguidelin.es)
+- [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
+- [Chris Pearce CSS Guidelines](https://github.com/chris-pearce/css-guidelines)
+- [Five Q CSS Guidelines](https://github.com/akwright/Five-Q-CSS-Guidelines)
