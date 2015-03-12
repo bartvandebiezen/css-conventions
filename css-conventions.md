@@ -15,7 +15,7 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 2. vendor-overrides (to re-declare some vendor CSS, if needed)
 3. fonts (font-facing)
 4. settings (variables and configs, e.g. colors, fonts families, font sizes)
-5. tools (e.g. mixins, functions, utilities)
+5. utilities (e.g. mixins, functions, tools)
 6. reset (e.g. normalize.css and box-sizing)
 7. base (HTML tags or blocks without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
 8. layout (wrapping and constraining blocks, e.g. grid, chapter sections, body with a sticky footer)
@@ -31,7 +31,7 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 2. vendor-overrides: same as vendor's file name.
 3. fonts: name of typeface.
 4. settings: name of property.
-5. tools: name of function or mixin.
+5. utilities: name of function or mixin.
 6. reset: original file name or function name.
 7. base: name of element or logical group of elements, e.g. headings, figure.
 8. layout: name of container or function.
