@@ -728,10 +728,11 @@ selector {
 ===*/
 ```
 
-### Numbered labels may be used for inline comments
+### Numbered labels may be used for inline comments.
 
-- Allowed when inline comments are too long to be readable.
-- Allowed if the same comment is applicable for multiple declarations.
+- Allowed when a rule contains inline comments are too long to be readable.
+- Allowed when a comment is applicable for multiple declarations.
+- When using numbered labels, use numbered labels for all inline comments for that rule.
 
 **Right:**
 ```CSS
@@ -753,7 +754,7 @@ img {
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
 
-### Write actions inside the CSS as: "Action (date/situation)".
+### Write to do's inside the CSS as: "TODO: action (date/situation)".
 
 - Always include a date or situation when it should be changed.
 - Always start actions with a verb.
@@ -761,7 +762,7 @@ img {
 **Right:**
 ```CSS
 selector {
-	property: value; /* Remove hack (after we stop Internet Explorer 9 support) */
-	property: red; /* Change value to blue (4 april 2015) */
+	property: value; /* TODO: Remove hack (after we stop Internet Explorer 9 support) */
+	property: red; /* TODO: Change value to blue (4 april 2015) */
 }
 ```
