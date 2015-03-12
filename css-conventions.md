@@ -833,16 +833,16 @@ img {
 
 ### Use special tag's to mark comments.
 
+- Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
+- For TODO's include a date when it should be done.
+- Always start TODO's with a verb.
+- Move TODO's as soon as possible to your backlog.
+
 **Available tags**
 - TODO: a task that should be done in the near future.
 - BUG: something that should be done as soon as possible.
 - HACK: fix for a specific web browser or situation.
 - DEBUG: A temporary comment.
-
-- Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
-- For TODO's include a date when it should be done.
-- Always start TODO's with a verb.
-- Move TODO's as soon as possible to your backlog.
 
 **Right:**
 ```CSS
