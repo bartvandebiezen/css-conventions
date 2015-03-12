@@ -1,6 +1,6 @@
 # CSS & CSS Preprocessor Conventions
 
-The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. These conventions are inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
+The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with.
 
 ## Grouping & Ordering
 
@@ -204,14 +204,15 @@ selector {
 
 ### Other spacing conventions
 
-- No spaces between property and colon.
-- Add a space between colon and value.
-- Parentheses should not be padded with spaces.
-- Remove spaces before and after a selector combinator.
-- Add a space between selector and opening brace.
-- Add a line break after the opening brace.
-- Remove spaces before selector delimiter.
-- Add a line break before closing brace.
+- No spaces between property and colon (':').
+- Add a space between colon (':') and value.
+- Parentheses ('()') should not be padded with spaces.
+- Remove spaces before and after a selector combinator (e.g. '>').
+- Add a space between selector and opening brace ('{').
+- Add a line break after the opening brace ('{').
+- Remove spaces before selector delimiter (',').
+- Also add a trailing semi-colon (';') after the last declaration.
+- Add a line break before closing brace ('}').
 - Trim trailing spaces or tabs.
 - Align prefixes.
 - Add an empty line at end of file.
@@ -239,6 +240,7 @@ SELECTOR_NAME {}
 - Modification means a different version of a block or element.
 - Modifiers are timeless. Use 'states' if a 'different version' is temporarily.
 - A block can be nested within another block if that block is often used by itself. The nested block has at least two class names: (1) the block name itself and (2) as an element of the surrounding block.
+- A class does not reflect the full trail of the DOM. Only one block or element is allowed within a class name.
 
 **Right:**
 ```CSS
@@ -259,6 +261,13 @@ SELECTOR_NAME {}
 .female-hand {}
 .left-hand {}
 ```
+
+**Wrong:**
+```CSS
+.block__element__element {}
+.block__block__element {}
+```
+
 
 See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) for further reading.
 
@@ -411,6 +420,27 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/responsive-grid-systems-a-solution/) and ['Tweakpoints'](http://adactio.com/journal/6044/) for further reading.
 
 ## Selectors
+
+### Name selectors with reusability in mind.
+
+- When you write a selector name for a new object, ask yourself if you could not only use this object multiple times in your current project but also in future projects.
+- Avoid names describing content or styling.
+
+**Right:**
+```CSS
+.menu-item {}
+.is-highlighted {}
+.chapter {}
+.drawer {}
+```
+
+**Wrong:**
+```CSS
+.menu-item-about-us {}
+.red {}
+.border-top {}
+.border-right {}
+```
 
 ### Never reference IDs from CSS files.
 
@@ -766,3 +796,11 @@ selector {
 	property: red; /* TODO: Change value to blue (4 april 2015) */
 }
 ```
+
+## Acknowledgements and Further Reading
+
+- [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting)
+- [cssguidelin.es](http://cssguidelin.es)
+- [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
+- [Chris Pearce CSS Guidelines](https://github.com/chris-pearce/css-guidelines)
+- [Five Q CSS Guidelines](https://github.com/akwright/Five-Q-CSS-Guidelines)
