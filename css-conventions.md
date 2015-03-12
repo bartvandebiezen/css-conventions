@@ -1,4 +1,4 @@
-# CSS & CSS Preprocessor Conventions
+# CSS and CSS Preprocessor Conventions
 
 The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with.
 
@@ -25,7 +25,7 @@ simple-selector > simple-selector {
 }
 ```
 
-## Grouping & Ordering
+## Grouping and Ordering
 
 ### Rules should be ordered based on specificity.
 
@@ -45,7 +45,8 @@ simple-selector > simple-selector {
 8. layout (immutable wrapping and constraining objects, e.g. grid, drawer container, chapter sections, body with a sticky footer)
 9. components (e.g. date selector, stepper, page-header, page-footer)
 10. pages (page specific styles. Before you add page specific styles, consider modified components)
-11. overrides (hacks and things we are not proud of)
+11. themes (for many projects non-existent)
+12. overrides (hacks and things we are not proud of)
 
 ### For Less or Sass, use seperate files for different rule groups.
 
@@ -61,12 +62,18 @@ simple-selector > simple-selector {
 8. layout: name of container or function.
 9. components: name of components or block.
 10. pages: name of page or template.
-11. overrides: depends on type.
+11. themes: name of the theme.
+12. overrides: depends on type.
+
+### Do not use @import for CSS files.
+
+- Importing CSS files has a negative impact on performance.
+- Create a link to the CSS file in the HTML head instead. Or better, change the CSS extension to the extension of your preprocessor. This forces the compiler to add the rules into your own CSS file.
 
 ### Properties should be ordered based on functionality.
 
 - Increases readability, understanding, and the ability to find duplicate properties.
-- Sass or Less includes should be placed first, before all properties within a rule. This is to improve readability and to assure properties from includes cannot override specific properties.
+- Sass or Less includes should be placed first, before all declarations within a rule. This is to improve readability and to assure declarations from includes cannot override specific declarations.
 
 **Order should be:**
 
@@ -244,6 +251,8 @@ selector {
 
 ## Naming
 
+### All names should be written in English.
+
 ### Write selectors in lowercase, and separate different words within a name with hyphens.
 
 **Right:**
@@ -345,7 +354,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 - Don't shorten selector or variable names.
 - Shorter selector names could lead to misunderstandings.
 - Shorter selector names don't affect file size that much, because of GZIP.
-- Exception: use 'nav' instead of 'navigation'.
+- You may use an abbreviation for selectors if it is already used as an official HTML element, e.g. '.nav' instead of '.navigation', or '.h1' instead of '.heading-1'.
 
 **Right:**
 ```CSS
@@ -730,6 +739,10 @@ selector {
 - 700 = bold
 - 800 = black (or heavy)
 - 900 = ultra
+
+### Only use !important when you know up front it should always override a style.
+
+- Never use !important to fix an existing problem.
 
 ## Comments
 
