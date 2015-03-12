@@ -673,6 +673,7 @@ selector {
 
 - Do not add trailing zero's.
 
+**Right:**
 ```CSS
 selector {
 	margin: 0.5%;
@@ -760,15 +761,15 @@ selector {
 
 ### Numbered labels may be used for inline comments.
 
-- Allowed when a rule contains inline comments are too long to be readable.
+- Allowed when a rule contains inline comments that are too long to be readable.
 - Allowed when a comment is applicable for multiple declarations.
-- When using numbered labels, use numbered labels for all inline comments for that rule.
+- When using numbered labels for a rule, also use numbered labels for all other inline comments for that rule.
 
 **Right:**
 ```CSS
 /*
 # Image
-1. Make responsive.
+1. Makes it responsive.
 */
 
 img {
