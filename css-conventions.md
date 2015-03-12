@@ -2,6 +2,29 @@
 
 The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with. These conventions are inspired by [sass-guideline.es](http://sass-guidelin.es/#syntax--formatting), [cssguidelin.es](http://cssguidelin.es), and [Medium's Less Coding Guidelines](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06).
 
+## CSS Terminology
+
+This documents assumes you are familiar with the terminology for CSS and CSS preprocessors. A short refresher:
+
+- Rule = combination of selector group and declaration block.
+- Selector group = All the selectors within a rule. Selectors within a selector group are separated by a comma.
+- Selector = Pointer to an element in your HTML page.
+- Simple selector = Part of a selector. Simple selectors within a selector are separated by a combinator.
+- Combinator = Describes the relation between simple selectors.
+- Property = Aspect of the selector you are styling.
+- Value = Setting of the property.
+- Declaration = Combination of a property and its value.
+- Declaration block = All the declarations within a rule.
+
+```
+selector,
+simple-selector > simple-selector {
+	property: value;
+	property: value;
+	property: value;
+}
+```
+
 ## Grouping & Ordering
 
 ### Rules should be ordered based on specificity.
@@ -23,7 +46,7 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 10. pages (page specific styles. Before you add page specific styles, consider modified components)
 11. overrides (hacks and things we are not proud of)
 
-### For Less or Sass, use seperate files for different objects.
+### For Less or Sass, use seperate files for different rule groups.
 
 **File names should be:**
 
@@ -204,6 +227,8 @@ selector {
 
 - No spaces between property and colon.
 - Add a space between colon and value.
+- Comma-separated property values should include a space after each comma.
+- Also add spaces after commas within e.g. rgb() values.
 - Remove spaces before and after a selector combinator.
 - Add a space between selector and opening brace.
 - Add a line break after the opening brace.
@@ -500,20 +525,20 @@ selector.is-updating {}
 
 **Right:**
 ```CSS
-selector {
+simple-selector {
 	property: value;
 }
 
-selector selector {
+simple-selector simple-selector {
 	property: value;
 }
 ```
 
 **Wrong:**
 ```Less
-selector {
+simple-selector {
 	property: value;
-	selector {
+	simple-selector {
 		property: value;
 	}
 }
@@ -558,7 +583,7 @@ selector:hover {
 
 ### All declarations should end with a semi-colon. Even the last declaration within a rule.
 
-- Makes it easier to reorder declarations.
+- Makes it easier to reorder or add declarations.
 - Removing the last semi-colon is needles optimization. Automate this with the compiler.
 
 ## Values
@@ -576,8 +601,8 @@ rgba(50, 50, 50, 0.2);
 
 **Wrong:**
 ```CSS
-#FFF;
-#FFFFFF;
+#fff;
+#ffffff;
 white;
 hsl(120, 100%, 50%);
 hsla(120, 100%, 50%, 1);
