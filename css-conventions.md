@@ -831,16 +831,24 @@ img {
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
 
-### Write to do's inside the CSS as: "TODO: action (date/situation)".
+### Use special tag's to mark comments.
 
-- Always include a date or situation when it should be changed.
-- Always start actions with a verb.
+**Available tags**
+- TODO: a task that should be done in the near future.
+- BUG: something that should be done as soon as possible.
+- HACK: fix for a specific web browser or situation.
+- DEBUG: A temporary comment.
+
+- Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
+- For TODO's include a date when it should be done.
+- Always start TODO's with a verb.
+- Move TODO's as soon as possible to your backlog.
 
 **Right:**
 ```CSS
 selector {
-	property: value; /* TODO: Remove hack (after we stop Internet Explorer 9 support) */
-	property: red; /* TODO: Change value to blue (4 april 2015) */
+	property: value; /* HACK: for Internet Explorer 9 */
+	property: red; /* TODO 2015 04 04: Change value to blue */
 }
 ```
 
