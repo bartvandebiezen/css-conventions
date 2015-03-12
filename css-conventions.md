@@ -831,7 +831,7 @@ img {
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
 
-### Use special tag's to mark comments.
+### Use special tags to mark comments.
 
 - Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
 - For TODO's include a date when it should be done.
