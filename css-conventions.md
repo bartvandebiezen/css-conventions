@@ -773,8 +773,8 @@ selector {
 */
 
 img {
-  max-width: 100%; /* [1] */
-  height: auto; /* [1] */
+	max-width: 100%; /* [1] */
+	height: auto; /* [1] */
 }
 ```
 
