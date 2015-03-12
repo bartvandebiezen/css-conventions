@@ -153,7 +153,7 @@ selector {
 
 **Wrong:**
 ```CSS
-selector, selector {
+selector, mini-selector mini-selector, selector {
 	property: value;
 }
 ```
