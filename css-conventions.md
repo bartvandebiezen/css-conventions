@@ -108,13 +108,14 @@ selector {
 }
 ```
 
-### Selectors seperated by a comma should be placed on a separate line.
+### Selectors, seperated by a comma, should be placed on separate lines.
 
 - Makes it easier to find and optimize selectors.
 
 **Right:**
 ```CSS
 selector,
+mini-selector mini-selector,
 selector {
 	property: value;
 }
@@ -205,6 +206,7 @@ selector {
 
 - No spaces between property and colon.
 - Add a space between colon and value.
+- Parentheses should not be padded with spaces.
 - Remove spaces before and after a selector combinator.
 - Add a space between selector and opening brace.
 - Add a line break after the opening brace.
@@ -433,7 +435,13 @@ See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further read
 
 ### Never reference ‘js-‘ prefixed class names from CSS files.
 
-- Classes starting with js- are used exclusively for javascript files.
+- Classes starting with 'js-' are used exclusively for javascript files.
+
+### Never reference ‘test-‘ prefixed class names from CSS files.
+
+- Classes starting with 'test-' are used by e.g. Ruby logic.
+
+### Never reference ‘track-‘ prefixed class names from CSS files.
 
 ### Use states as separate classes and add them to existing selectors.
 
@@ -462,6 +470,8 @@ selector.is-selected {}
 selector.is-filled {}
 selector.is-empty {}
 selector.is-updating {}
+selector.is-loaded {}
+selector.is-loading {}
 ```
 
 **Wrong:**
@@ -629,6 +639,22 @@ selector {
 	margin: 0px;
 }
 ```
+### Always include a zero when a numeric value is less than 1.
+
+- Do not add trailing zero's.
+
+```CSS
+selector {
+	margin: 0.5%;
+}
+```
+
+**Wrong:**
+```CSS
+selector {
+	margin: .50%;
+}
+```
 
 ### Link font weights to their correct CSS values.
 
@@ -672,7 +698,7 @@ selector {
 - CSS style comments should be removed during compiling Less or Sass code for live versions.
 - Comments outside rules should be separated by a single empty line.
 - For comments outsides rules, start and end syntaxes should be on a separate line. Even for single line comments, because of consistency and making transitions between single and multi line (adding and removing lines) easier.
-- Comments inside rules can be written as 'single line comment': syntaxes and comment on the same line.
+- Comments inside rules (a.k.a. inline comments) can be written as 'single line comment': syntaxes and comment on the same line.
 - Do not add extra dividers to mark a section. If needed, change your code coloring to identify comment blocks.
 - Do not indent comments or start every line with special characters such as *s.
 - Use markdown within comments.
@@ -700,6 +726,24 @@ selector {
 * -- Heading 1 --
 * Paragraph
 ===*/
+```
+
+### Numbered labels may be used for inline comments
+
+- Allowed when inline comments are too long to be readable.
+- Allowed if the same comment is applicable for multiple declarations.
+
+**Right:**
+```CSS
+/*
+# Image
+1. Make responsive.
+*/
+
+img {
+  max-width: 100%; /* [1] */
+  height: auto; /* [1] */
+}
 ```
 
 ### Never limit comment lines to 80 characters.
