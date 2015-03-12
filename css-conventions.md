@@ -16,6 +16,7 @@ This document assumes you are familiar with the terminology for CSS and CSS prep
 - Declaration = Combination of a property and its value.
 - Declaration block = All the declarations within a rule.
 
+**Rule:**
 ```
 selector,
 simple-selector > simple-selector {
