@@ -4,7 +4,7 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 
 ## CSS Terminology
 
-This documents assumes you are familiar with the terminology for CSS and CSS preprocessors. A short refresher:
+This document assumes you are familiar with the terminology for CSS and CSS preprocessors. A short refresher:
 
 - Rule = combination of selector group and declaration block.
 - Selector group = All the selectors within a rule. Selectors within a selector group are separated by a comma.
