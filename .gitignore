@@ -38,6 +38,7 @@ Thumbs.db
 
 # workspace files are user-specific
 *.sublime-workspace
+*.sublime-project
 
 # sftp configuration file
 sftp-config.json
