@@ -562,9 +562,9 @@ selector.is-loading {}
 
 ## Nesting
 
-### Do not nest selectors deeper than 3 levels.
+### A selector may contain no more than three mini selectors.
 
-- Even when using the BEM methodology, you cannot avoid cascading. Think about content where you have little control, such as user generated content. In these cases it is allowed to nest selectors, but never deeper than 3 levels.
+- Even when using the BEM methodology, you cannot avoid cascading. Think about content where you have little control, such as user generated content. In these cases it is allowed to cascade, but never deeper than three levels.
 
 **Right:**
 ```CSS
@@ -740,6 +740,10 @@ selector {
 ```
 
 ### Link font weights to their correct CSS values.
+
+- Sometimes we encounter fonts that have been given cryptic file names: not containing any clue about the weight or typeface. Rewrite the file names, before you add these to your project. A good pattern would be: [typeface]-[weight].[extension].
+
+**Font weights:**
 
 - 100 = hair
 - 200 = thin
