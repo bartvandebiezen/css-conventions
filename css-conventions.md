@@ -275,8 +275,8 @@ See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel
 ### Names of selectors or variables should follow 'BEM Methodology' honed by Nicolas Gallagher.
 
 - Enables you to write modular based CSS, which makes it easier to manage larger projects that last a while.
-- Name of an element is a combination of the surrounding block and element, divided with two underscores '__'.
-- Name of a modified block or element is a combination between the name and the modifier, divided with two hyphens ‘--‘.
+- Name of an element is a combination of the surrounding block and element, divided with two underscores '\_\_'.
+- Name of a modified block or element is a combination between the name and the modifier, divided with two hyphens '--'.
 - Modification means a different version of a block or element.
 - Modifiers are timeless. Use 'states' if a 'different version' is temporarily.
 - A block can be nested within another block if that block is often used by itself. The nested block has at least two class names: (1) the block name itself and (2) as an element of the surrounding block.
