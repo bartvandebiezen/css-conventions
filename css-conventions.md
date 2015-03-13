@@ -16,10 +16,15 @@ This document assumes you are familiar with the terminology for CSS and CSS prep
 - **Declaration** = Combination of a property and its value.
 - **Declaration block** = All the declarations within a rule.
 
-<figure>
-<img width="330px" height="280px" src="images/css-terminology.svg">
-<figcaption>Visual presentation of the terminology.</figcaption>
-</figure>
+**Rule:**
+```
+selector,
+simple-selector > simple-selector {
+	property: value;
+	property: value;
+	property: value;
+}
+```
 
 ## Grouping and Ordering
 
@@ -427,10 +432,12 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 - Makes it easier to add new media queries in the future, for example 'couch', 'wrist', or 'glasses'.
 - Breakpoints are currently based on size differences, but don't have to be.
 
-<figure>
-<img width="280px" height="80px" src="images/media-queries.svg">
-<figcaption>Visual presentation of the media queries.</figcaption>
-</figure>
+**Visual presentation of the breakpoints:**
+```
+──palm─┤──lap──┤─desk────────────
+───portable────┤
+       ├──lap-and-up─────────────
+```
 
 **Right:**
 ```Less
