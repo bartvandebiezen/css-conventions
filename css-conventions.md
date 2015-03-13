@@ -6,15 +6,15 @@ The goal of these conventions are to create reusable stylesheets and to keep the
 
 This document assumes you are familiar with the terminology for CSS and CSS preprocessors. A short refresher:
 
-- Rule = combination of selector group and declaration block.
-- Selector group = All the selectors within a rule. Selectors within a selector group are separated by a comma.
-- Selector = Pointer to an element in your HTML page.
-- Simple selector = Part of a selector. Simple selectors within a selector are separated by a combinator.
-- Combinator = Describes the relation between simple selectors.
-- Property = Aspect of the selector you are styling.
-- Value = Setting of the property.
-- Declaration = Combination of a property and its value.
-- Declaration block = All the declarations within a rule.
+- **Rule** = combination of selector group and declaration block.
+- **Selector group** = All the selectors within a rule. Selectors within a selector group are separated by a comma.
+- **Selector** = Pointer to an element in your HTML page.
+- **Simple selector** = Part of a selector. Simple selectors within a selector are separated by a combinator.
+- **Combinator** = Describes the relation between simple selectors.
+- **Property** = Aspect of the selector you are styling.
+- **Value** = Setting of the property.
+- **Declaration** = Combination of a property and its value.
+- **Declaration block** = All the declarations within a rule.
 
 **Rule:**
 ```
@@ -36,35 +36,35 @@ simple-selector > simple-selector {
 
 **Order should be:**
 
-1. vendors (e.g. Bootstrap, jQuery UI)
-2. vendor-overrides (to re-declare some vendor CSS, if needed)
-3. fonts (font-facing)
-4. settings (variables and configs, e.g. colors, fonts families, font sizes)
-5. utilities (e.g. mixins, functions, tools)
-6. reset (e.g. normalize.css and box-sizing)
-7. base (HTML tags or objects without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
-8. layout (immutable wrapping and constraining objects, e.g. grid, drawer container, chapter sections, body with a sticky footer)
-9. components (e.g. date selector, stepper, page-header, page-footer)
-10. pages (page specific styles. Before you add page specific styles, consider modified components)
-11. themes (for many projects non-existent)
-12. overrides (hacks and things we are not proud of)
+1. **vendors** (e.g. Bootstrap, jQuery UI)
+2. **vendor-overrides** (to re-declare some vendor CSS, if needed)
+3. **fonts** (font-facing)
+4. **settings** (variables and configs, e.g. colors, fonts families, font sizes)
+5. **utilities** (e.g. mixins, functions, tools)
+6. **reset** (e.g. normalize.css and box-sizing)
+7. **base** (HTML tags or objects without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
+8. **layout** (immutable wrapping and constraining objects, e.g. grid, drawer container, chapter sections, body with a sticky footer)
+9. **components** (e.g. date selector, stepper, page-header, page-footer)
+10. **pages** (page specific styles. Before you add page specific styles, consider modified components)
+11. **themes** (for many projects non-existent)
+12. **overrides** (hacks and things we are not proud of)
 
 ### For Less or Sass, use seperate files for different rule groups.
 
 **File names should be:**
 
-1. vendors: original file name.
-2. vendor-overrides: same as vendor's file name.
-3. fonts: name of typeface.
-4. settings: name of property.
-5. utilities: name of function or mixin.
-6. reset: original file name or function name.
-7. base: name of element or logical group of elements, e.g. headings, figure.
-8. layout: name of container or function.
-9. components: name of components or block.
-10. pages: name of page or template.
-11. themes: name of the theme.
-12. overrides: depends on type.
+1. **vendors**: original file name.
+2. **vendor-overrides**: same as vendor's file name.
+3. **fonts**: name of typeface.
+4. **settings**: name of property.
+5. **utilities**: name of function or mixin.
+6. **reset**: original file name or function name.
+7. **base**: name of element or logical group of elements, e.g. headings, figure.
+8. **layout**: name of container or function.
+9. **components**: name of components or block.
+10. **pages**: name of page or template.
+11. **themes**: name of the theme.
+12. **overrides**: depends on type.
 
 ### Do not use @import for CSS files.
 
@@ -395,7 +395,14 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 
 **Right:**
 ```Less
+// # Colors
+
+// ## Descriptive colors
+
 @color-silver: rgb(50, 50, 50);
+
+// ## Functional colors
+
 @color-primary: @color-silver;
 @color-primary--90: lighten(@color-primary--100, 10%)
 @color-primary--100: @color-primary;
