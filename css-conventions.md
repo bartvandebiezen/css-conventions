@@ -252,9 +252,12 @@ selector {
 
 ## Naming
 
-### All names should be written in English.
+### Write selectors in English.
 
-### Write selectors in lowercase, and separate different words within a name with hyphens.
+### Write selectors in lower-case and use hyphen-delimited syntax.
+
+- CSS is a hyphen-delimted syntax.
+- Makes it easier to read and scan.
 
 **Right:**
 ```CSS
@@ -266,6 +269,8 @@ selector-name {}
 SelectorName {}
 SELECTOR_NAME {}
 ```
+
+See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel-case-seriously-sucks/) for further reading.
 
 ### Names of selectors or variables should follow 'BEM Methodology' honed by Nicolas Gallagher.
 
