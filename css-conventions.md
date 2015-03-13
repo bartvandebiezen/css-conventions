@@ -281,6 +281,7 @@ See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel
 - Modifiers are timeless. Use 'states' if a 'different version' is temporarily.
 - A block can be nested within another block if that block is often used by itself. The nested block has at least two class names: (1) the block name itself and (2) as an element of the surrounding block.
 - A class does not reflect the full trail of the DOM. Only one block or element is allowed within a class name.
+- When is a block a modified block or a complete new block? A modified block still inherits a lot of styling from the original block. A new block is completely independent from the original block. You determine the tipping point, but if in doubt create a new block.
 
 **Right:**
 ```CSS
