@@ -49,7 +49,7 @@ simple-selector > simple-selector {
 11. **themes** (for many projects non-existent)
 12. **overrides** (hacks and things we are not proud of)
 
-### For Less or Sass, use seperate files for different rule groups.
+### For Less or Sass, use separate files for different rule groups.
 
 **File names should be:**
 
@@ -139,7 +139,7 @@ selector {
 }
 ```
 
-### Selectors, seperated by a comma, should be placed on separate lines.
+### Selectors, separated by a comma, should be placed on separate lines.
 
 - Makes it easier to find and optimize selectors.
 
@@ -256,7 +256,7 @@ selector {
 
 ### Write selectors in lower-case and use hyphen-delimited syntax.
 
-- CSS is a hyphen-delimted syntax.
+- CSS is a hyphen-delimited syntax.
 - Makes it easier to read and scan.
 
 **Right:**
@@ -782,7 +782,7 @@ selector {
 @color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
 
-### Use CSS commenting style '/* */' for comments usefull for debugging.
+### Use CSS commenting style '/* */' for comments useful for debugging.
 
 - Applicable for commenting code visible in CSS, such as rules, selectors, properties, or values.
 - Preserve CSS style comments during compiling Less or Sass code for dev versions.
