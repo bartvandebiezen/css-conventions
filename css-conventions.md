@@ -844,6 +844,9 @@ img {
 - BUG: something that should be done as soon as possible.
 - HACK: fix for a specific web browser or situation.
 - DEBUG: A temporary comment.
+- IDEA: Possible improvement.
+- ???: Unclear, needs a better description.
+- CRED: Credits for someone.
 
 **Right:**
 ```CSS
