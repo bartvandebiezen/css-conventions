@@ -202,7 +202,7 @@ selector {
 
 ### Value lists should be written on the same line.
 
-- Exception: only very long comma separated values, such as font-face url's and gradients, may be written on different lines to improve readability.
+- Exception: only very long comma separated values, such as font-face urls and gradients, may be written on different lines to improve readability.
 
 **Right:**
 ```CSS
@@ -664,7 +664,7 @@ rgba(50,50,50,0.2);
 ### Absolute sizes should be written in pixels instead of ems or rems.
 
 - A 'CSS px' is a reference pixel intended to scale in size depending on the 'typical' distance of an observer from the display.
-- Web browsers scale a design in pixels the same way they scale designs in em's or rem's. Zooming even triggers media queries based on pixels. Essentially, web browsers make the reference pixel larger or smaller.
+- Web browsers scale a design in pixels the same way they scale designs in ems or rems. Zooming even triggers media queries based on pixels. Essentially, web browsers make the reference pixel larger or smaller.
 - Makes it easier to integrate images or other media formats based on pixels in your layout.
 - Makes sure you don't get nummers like '0.29310344827586204em' (this is an actual used number).
 - Sizing in pixels reduces development time.
@@ -713,7 +713,7 @@ selector {
 ```
 ### Always include a zero when a numeric value is less than 1.
 
-- Do not add trailing zero's.
+- Do not add trailing zeros.
 
 **Right:**
 ```CSS
@@ -834,9 +834,9 @@ img {
 ### Use special tags to mark comments.
 
 - Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
-- For TODO's include a date when it should be done.
-- Always start TODO's with a verb.
-- Move TODO's as soon as possible to your backlog.
+- For TODOs include a date when it should be done.
+- Always start TODOs with a verb.
+- Move TODOs as soon as possible to your backlog.
 
 **Available tags**
 - TODO: a task that should be done in the near future.
