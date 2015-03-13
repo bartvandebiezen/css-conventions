@@ -505,15 +505,9 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 
 See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further reading.
 
-### Never reference ‘js-‘ prefixed class names from CSS files.
+### Never reference class names in your CSS files used by other applications or languages.
 
-- Classes starting with 'js-' are used exclusively for javascript files.
-
-### Never reference ‘test-‘ prefixed class names from CSS files.
-
-- Classes starting with 'test-' are used by e.g. Ruby logic.
-
-### Never reference ‘track-‘ prefixed class names from CSS files.
+- Never reference, for example, classes prefixed with 'js-', 'test-', or 'track-', which are used by Javascript, tracking and testing tools.
 
 ### Use states as separate classes and add them to existing selectors.
 
