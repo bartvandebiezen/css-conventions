@@ -535,6 +535,10 @@ selector.is-expanded {}
 selector.is-highlighted {}
 selector.is-invalid {}
 selector.is-valid {}
+selector.is-touched {}
+selector.is-untouched {}
+selector.is-pristine {}
+selector.is-dirty {}
 selector.is-dragging {}
 selector.is-dropped {}
 selector.is-selected {}
