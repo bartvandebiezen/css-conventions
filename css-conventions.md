@@ -69,7 +69,7 @@ simple-selector > simple-selector {
 ### Do not use @import for CSS files.
 
 - Importing CSS files has a negative impact on performance.
-- Create a link to the CSS file in the HTML head instead. Or better, change the CSS extension to the extension of your preprocessor. This forces the compiler to add the rules into your own CSS file.
+- Create a link to the CSS file in the HTML head instead, or better: download the CSS file, place it in the correct group and change the CSS extension to the extension of your preprocessor. This forces the compiler to add the rules into your own CSS file.
 
 ### Properties should be ordered based on functionality.
 
