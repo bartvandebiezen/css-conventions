@@ -2,6 +2,8 @@
 
 The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with.
 
+Altough Less is used for the examples, it does not matter if you use Less, Sass, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
+
 For these conventions a [CSScomb config file is available](.csscomb.json).
 
 ## CSS Terminology
