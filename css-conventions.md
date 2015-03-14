@@ -252,6 +252,8 @@ selector {
 - Trim trailing spaces or tabs.
 - Add an empty line at end of file.
 
+Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config file](.csscomb.json) based on these conventions, can be used to automate spacing.
+
 ## Naming
 
 ### Write selectors in English
@@ -723,7 +725,7 @@ selector {
 }
 ```
 
-### Always include a zero when a numeric value is less than 1
+### Always include a leading zero when a numeric value is less than 1
 
 - Do not add trailing zeros.
 
