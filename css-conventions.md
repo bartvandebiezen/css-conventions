@@ -87,7 +87,7 @@ simple-selector > simple-selector {
 7. Visual properties
 8. Print
 
-Tools like [CSScomb](http://csscomb.com) can be used to automate ordering.
+Tools like [CSScomb](http://csscomb.com) can be used to automate ordering. For these conventions a [CSScomb config file is available](.csscomb.json).
 
 ## Spacing
 
