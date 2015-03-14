@@ -513,7 +513,7 @@ See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further read
 
 ### Never reference class names in your CSS files used by other applications or languages.
 
-- Never reference, for example, classes prefixed with 'js-', 'test-', or 'track-', which are used by Javascript, tracking and testing tools.
+- Never reference, for example, classes prefixed with 'js-', 'test-', or 'track-', which are used by Javascript, testing, or tracking tools.
 
 ### Use states as separate classes and add them to existing selectors.
 
@@ -618,7 +618,7 @@ selector {
 	&:hover {
 		property: value;
 	}
-	@media @breakpoint {
+	@media @media-query {
 		property: value;
 	}
 }
@@ -634,7 +634,7 @@ selector:hover {
 	property: value;
 }
 
-@media @breakpoint {
+@media @media-query {
 	selector {
 		property: value;
 	}
@@ -668,8 +668,6 @@ rgba(50, 50, 50, 0.2);
 white;
 hsl(120, 100%, 50%);
 hsla(120, 100%, 50%, 1);
-rgb(50,50,50);
-rgba(50,50,50,0.2);
 ```
 
 ### Absolute sizes should be written in pixels instead of ems or rems.
@@ -756,9 +754,9 @@ selector {
 - 800 = black (or heavy)
 - 900 = ultra
 
-### Only use !important when you know up front it should always override a style.
+### Only use '!important' when you know up front it should always override a style.
 
-- Never use !important to fix an existing problem.
+- Never use '!important' to fix an existing problem.
 
 ## Comments
 
@@ -780,6 +778,7 @@ selector {
 **Wrong:**
 ```Less
 /* -- colors -- */
+
 @color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
 
@@ -792,7 +791,7 @@ selector {
 - For comments outsides rules, start and end syntaxes should be on a separate line. Even for single line comments, because of consistency and making transitions between single and multi line (adding and removing lines) easier.
 - Comments inside rules (a.k.a. inline comments) can be written as 'single line comment': syntaxes and comment on the same line.
 - Do not add extra dividers to mark a section. If needed, change your code coloring to identify comment blocks.
-- Do not indent comments or start every line with special characters such as *s.
+- Do not indent comments or start every line with special characters such as asterisks.
 - Use markdown within comments.
 - Do not add line breaks for wrapping.
 
