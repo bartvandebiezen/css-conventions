@@ -28,7 +28,7 @@ simple-selector > simple-selector {
 
 ## Grouping and Ordering
 
-### Rules should be ordered based on specificity.
+### Rules should be ordered based on specificity
 
 - If you use Less or Sass you should create different directories for each group.
 - Never use sub-folders to group files within a group.
@@ -49,7 +49,7 @@ simple-selector > simple-selector {
 11. **themes** (for many projects non-existent)
 12. **overrides** (hacks and things we are not proud of)
 
-### For Less or Sass, use separate files for different rule groups.
+### For Less or Sass, use separate files for different rule groups
 
 **File names should be:**
 
@@ -66,12 +66,12 @@ simple-selector > simple-selector {
 11. **themes**: name of the theme.
 12. **overrides**: depends on type.
 
-### Do not use @import for CSS files.
+### Do not use @import for CSS files
 
 - Importing CSS files has a negative impact on performance.
 - Create a link to the CSS file in the HTML head instead, or better: download the CSS file, place it in the correct group and change the CSS extension to the extension of your preprocessor. This forces the compiler to add the rules into your own CSS file.
 
-### Properties should be ordered based on functionality.
+### Properties should be ordered based on functionality
 
 - Increases readability, understanding, and the ability to find duplicate properties.
 - Sass or Less includes should be placed first, before all declarations within a rule. This is to improve readability and to assure declarations from includes cannot override specific declarations.
@@ -91,7 +91,7 @@ Tools like [CSScomb](http://csscomb.com) can be used to automate ordering.
 
 ## Spacing
 
-### Indents should be done with one tab, not spaces.
+### Indents should be done with one tab, not spaces
 
 - Tabs allow developers with different preferences in indentation size to change how the code looks.
 - It is impossible to half-indent with tabs.
@@ -111,7 +111,7 @@ selector {
 }
 ```
 
-### Rules should be separated by one empty line.
+### Rules should be separated by one empty line
 
 **Right:**
 ```CSS
@@ -139,7 +139,7 @@ selector {
 }
 ```
 
-### Selectors, separated by a comma, should be placed on separate lines.
+### Selectors, separated by a comma, should be placed on separate lines
 
 - Makes it easier to find and optimize selectors.
 
@@ -159,7 +159,7 @@ selector, mini-selector mini-selector, selector {
 }
 ```
 
-### Declarations should be on a separate line.
+### Declarations should be on a separate line
 
 - Exception: when there is a large amount of selectors with similar properties. Only in this case it is allowed to place selectors and declarations on a single line.
 
@@ -181,7 +181,7 @@ selector {
 }
 ```
 
-### Strings should be quoted with a single quote.
+### Strings should be quoted with a single quote
 
 **Right:**
 ```CSS
@@ -200,7 +200,7 @@ selector {
 }
 ```
 
-### Value lists should be written on the same line.
+### Value lists should be written on the same line
 
 - Exception: only very long comma separated values, such as font-face urls and gradients, may be written on different lines to improve readability.
 
@@ -252,9 +252,9 @@ selector {
 
 ## Naming
 
-### Write selectors in English.
+### Write selectors in English
 
-### Write selectors in lower-case and use hyphen-delimited syntax.
+### Write selectors in lower-case and use hyphen-delimited syntax
 
 - CSS is a hyphen-delimited syntax.
 - Makes it easier to read and scan.
@@ -272,7 +272,7 @@ SELECTOR_NAME {}
 
 See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel-case-seriously-sucks/) for further reading.
 
-### Names of selectors or variables should follow 'BEM Methodology' honed by Nicolas Gallagher.
+### Names of selectors or variables should follow 'BEM Methodology' honed by Nicolas Gallagher
 
 - Enables you to write modular based CSS, which makes it easier to manage larger projects that last a while.
 - Name of an element is a combination of the surrounding block and element, divided with two underscores '\_\_'.
@@ -312,7 +312,7 @@ See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel
 
 See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) for further reading.
 
-### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'.
+### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'
 
 - The standard variant of a pattern gets the modifier '100'.
 - There are two standard variants: with and without a number. Especially useful when you start patterns without variants and you have to add variants later on in a project. You don't want to change all the names in your project.
@@ -356,7 +356,7 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 
 See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfBruening/how-to-build-the-perfect-pattern-libraryy) for further reading.
 
-### Names of selectors or variables should be written out in full.
+### Names of selectors or variables should be written out in full
 
 - Don't shorten selector or variable names.
 - Shorter selector names could lead to misunderstandings.
@@ -377,7 +377,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 }
 ```
 
-### Names of variables should start with the property or type.
+### Names of variables should start with the property or type
 
 - Makes it easier to group them and to use autocomplete in development tools.
 
@@ -393,7 +393,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 @blue-color: ;
 ```
 
-### Names of variables for colors should be written both descriptive and functional.
+### Names of variables for colors should be written both descriptive and functional
 
 - Start with descriptive variables, followed by the functional variables.
 - City block sizes may be used for functional names. Higher number means darker, lower number means lighter. You can use Less or Sass functions to control the variants. It is also possible to use descriptive names for variants.
@@ -422,7 +422,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 
 See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
 
-### Names of media queries should be based on human ergonomics.
+### Names of media queries should be based on human ergonomics
 
 - There are major and minor ranges.
 - Major ranges should be based on human ergonomics.
@@ -469,7 +469,7 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 
 ## Selectors
 
-### Name selectors with reusability in mind.
+### Name selectors with reusability in mind
 
 - When you write a selector name for a new object, ask yourself if you could not only use this object multiple times in your current project but also in future projects.
 - Avoid names describing content or styling.
@@ -490,7 +490,7 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 .border-right {}
 ```
 
-### Never reference IDs from CSS files.
+### Never reference IDs from CSS files
 
 - IDs are overly specific and unnecessary.
 - Performance difference between classes and IDs is irrelevant.
@@ -511,11 +511,11 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 
 See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further reading.
 
-### Never reference class names in your CSS files used by other applications or languages.
+### Never reference class names in your CSS files used by other applications or languages
 
 - Never reference, for example, classes prefixed with 'js-', 'test-', or 'track-', which are used by Javascript, testing, or tracking tools.
 
-### Use states as separate classes and add them to existing selectors.
+### Use states as separate classes and add them to existing selectors
 
 - States differ from modifiers. Modifiers are timeless, states are temporarily.
 - States never contain global styling. Style states always in combination with other selectors.
@@ -563,7 +563,7 @@ selector.is-loading {}
 
 ## Nesting
 
-### A selector may contain no more than three mini selectors.
+### A selector may contain no more than three mini selectors
 
 - Even when using the BEM methodology, you cannot avoid cascading. Think about content where you have little control, such as user generated content. In these cases it is allowed to cascade, but never deeper than three levels.
 
@@ -581,7 +581,7 @@ selector.is-loading {}
 }
 ```
 
-### Do not nest rules with Less or Sass.
+### Do not nest rules with Less or Sass
 
 - Nesting rules with Less or Sass makes it more difficult to optimize your CSS.
 
@@ -606,7 +606,7 @@ simple-selector {
 }
 ```
 
-### Do nest pseudo-classes, pseudo-elements, media queries, and states with Less or Sass.
+### Do nest pseudo-classes, pseudo-elements, media queries, and states with Less or Sass
 
 - Makes sure style and behavior of the same selector are grouped.
 - Nested pseudo-classes, pseudo-elements, media queries, and states should not be separated by an empty line.
@@ -643,14 +643,14 @@ selector:hover {
 
 ## Declarations
 
-### All declarations should end with a semi-colon. Even the last declaration within a rule.
+### All declarations should end with a semi-colon. Even the last declaration within a rule
 
 - Makes it easier to reorder or add declarations.
 - Removing the last semi-colon is needles optimization. Automate this with the compiler.
 
 ## Values
 
-### Color units should be written in 'RGB' or 'RGBa'.
+### Color units should be written in 'RGB' or 'RGBa'
 
 - Less or Sass should convert RGB to hex color codes to reduce file size.
 - RGB has the advantage over HSL, because it is better and more consistently available in other systems like brand guidelines, graphic applications, or color systems.
@@ -670,7 +670,7 @@ hsl(120, 100%, 50%);
 hsla(120, 100%, 50%, 1);
 ```
 
-### Absolute sizes should be written in pixels instead of ems or rems.
+### Absolute sizes should be written in pixels instead of ems or rems
 
 - A 'CSS px' is a reference pixel intended to scale in size depending on the 'typical' distance of an observer from the display.
 - Web browsers scale a design in pixels the same way they scale designs in ems or rems. Zooming even triggers media queries based on pixels. Essentially, web browsers make the reference pixel larger or smaller.
@@ -682,7 +682,7 @@ hsla(120, 100%, 50%, 1);
 
 See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.html#length-units) for further reading.
 
-### Z-indexes are limited to 12 levels.
+### Z-indexes are limited to 12 levels
 
 - The z-index starts at -100 and is limited to 1000. Steps are 100.
 - Steps of hundreds are used to allow adding additional numbers. But will probably never happen. If more z-index are needed, rethink your code.
@@ -705,7 +705,7 @@ selector {
 }
 ```
 
-### Avoid adding units to zero-values.
+### Avoid adding units to zero-values
 
 **Right:**
 ```CSS
@@ -720,7 +720,8 @@ selector {
 	margin: 0px;
 }
 ```
-### Always include a zero when a numeric value is less than 1.
+
+### Always include a zero when a numeric value is less than 1
 
 - Do not add trailing zeros.
 
@@ -738,7 +739,7 @@ selector {
 }
 ```
 
-### Link font weights to their correct CSS values.
+### Link font weights to their correct CSS values
 
 - Sometimes we encounter fonts that have been given cryptic file names: not containing any clue about the weight or typeface. Rewrite the file names, before you add these to your project. A good pattern would be: [typeface]-[weight].[extension].
 
@@ -754,13 +755,13 @@ selector {
 - 800 = black (or heavy)
 - 900 = ultra
 
-### Only use '!important' when you know up front it should always override a style.
+### Only use '!important' when you know up front it should always override a style
 
 - Never use '!important' to fix an existing problem.
 
 ## Comments
 
-### Use Less/Sass commenting style '//' for comments pointless for debugging.
+### Use Less/Sass commenting style '//' for comments pointless for debugging
 
 - Applicable for commenting code not visible in CSS, such as mixins, or variables. It assures you don't have loose comments floating around in dev version: Less/Sass style comments are always compiled out.
 - Comments outside rules should be separated by a single empty line.
@@ -782,7 +783,7 @@ selector {
 @color-blue: rgb(0, 0, 255); /* #0000ff */
 ```
 
-### Use CSS commenting style '/* */' for comments useful for debugging.
+### Use CSS commenting style '/* */' for comments useful for debugging
 
 - Applicable for commenting code visible in CSS, such as rules, selectors, properties, or values.
 - Preserve CSS style comments during compiling Less or Sass code for dev versions.
@@ -819,7 +820,7 @@ selector {
 ===*/
 ```
 
-### Numbered labels may be used for inline comments.
+### Numbered labels may be used for inline comments
 
 - Allowed when a rule contains inline comments that are too long to be readable.
 - Allowed when a comment is applicable for multiple declarations.
@@ -838,14 +839,14 @@ img {
 }
 ```
 
-### Never limit comment lines to 80 characters.
+### Never limit comment lines to 80 characters
 
 - Some guidelines advice to limit lines to 80 characters for readability. Don't do this.
 - Line breaks have or should have semantic value.
 - Manually limiting line length adds unnecessary extra time for editing comments.
 - Set your editor to wrap lines instead.
 
-### Use special tags to mark comments.
+### Use special tags to mark comments
 
 - Using consistent tags such as 'TODO' makes sure they can be easily found with text search.
 - For TODOs include a date when it should be done.
