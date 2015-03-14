@@ -2,6 +2,8 @@
 
 The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with.
 
+For these conventions a [CSScomb config file is available](.csscomb.json).
+
 ## CSS Terminology
 
 This document assumes you are familiar with the terminology for CSS and CSS preprocessors. A short refresher:
@@ -87,7 +89,7 @@ simple-selector > simple-selector {
 7. Visual properties
 8. Print
 
-Tools like [CSScomb](http://csscomb.com) can be used to automate ordering. For these conventions a [CSScomb config file is available](.csscomb.json).
+Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config file](.csscomb.json) based on these conventions, can be used to automate ordering.
 
 ## Spacing
 
