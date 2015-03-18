@@ -46,16 +46,16 @@ simple-selector > simple-selector {
 ### Rules should be ordered based on specificity
 
 - If you use Less or Sass you should create different directories for each group.
-- Never use sub-folders to group files within a group.
+- Avoid use sub-folders to group files within a group.
 - Rules within vendors, utilities, or layout are [immutable](http://csswizardry.com/2015/03/immutable-css/).
 
 **Order should be:**
 
-1. **vendors** (e.g. Bootstrap, jQuery UI)
+1. **vendors** (e.g. Bourbon, Bootstrap, jQuery UI)
 2. **vendor-overrides** (to re-declare some vendor CSS, if needed)
 3. **fonts** (font-facing)
 4. **settings** (variables and configs, e.g. colors, fonts families, font sizes)
-5. **utilities** (e.g. mixins, functions, tools)
+5. **utilities** (e.g. your own mixins, functions, and tools)
 6. **reset** (e.g. normalize.css and box-sizing)
 7. **base** (HTML tags or objects without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
 8. **layout** (immutable wrapping and constraining objects, e.g. grid, drawer container, chapter sections, body with a sticky footer)
@@ -71,7 +71,7 @@ simple-selector > simple-selector {
 1. **vendors**: original file name.
 2. **vendor-overrides**: same as vendor's file name.
 3. **fonts**: name of typeface.
-4. **settings**: name of property.
+4. **settings**: name of property or use.
 5. **utilities**: name of function or mixin.
 6. **reset**: original file name or function name.
 7. **base**: name of element or logical group of elements, e.g. headings, figure.
@@ -331,9 +331,10 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 
 ### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'
 
+- A city block size can be part of a name (e.g. line-height-200) or can be a BEM modifier (e.g. color-gray--200). Use one hyphen when it is part of the name, use two hyphens when it is a modifier.
 - The standard variant of a pattern gets the modifier '100'.
 - There are two standard variants: with and without a number. Especially useful when you start patterns without variants and you have to add variants later on in a project. You don't want to change all the names in your project.
-- Smaller variants get the modifiers ’90', '80', '70',…
+- Smaller variants get the modifiers '90', '80', '70',…
 - Large variants get the modifiers '200', '300',…
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
 
@@ -378,7 +379,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 - Don't shorten selector or variable names.
 - Shorter selector names could lead to misunderstandings.
 - Shorter selector names don't affect file size that much, because of GZIP.
-- You may use an abbreviation for selectors if it is already used as an official HTML element, e.g. '.nav' instead of '.navigation', or '.h1' instead of '.heading-1'.
+- You may use an abbreviation for selectors if it is already used as an official HTML element, e.g. '.nav' instead of '.navigation', or '.h1' instead of '.heading-1'. An exception is 'ui'. You may use 'ui' instead of 'user interface'.
 
 **Right:**
 ```CSS
@@ -446,7 +447,6 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 - If human ergonomics is not directly applicable, describe media queries as objects as close as possible to the human body.
 - Minor ranges (a.k.a. tweak points) are based on size differences within major ranges.
 - Breakpoints should only be used if the content requires it.
-- Makes it easier to add new media queries in the future, for example 'couch', 'wrist', or 'glasses'.
 - Breakpoints are currently based on size differences, but don't have to be.
 
 **Visual presentation of the breakpoints:**
