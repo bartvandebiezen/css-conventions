@@ -331,7 +331,7 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 
 ### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'
 
-- A city block size can be part of a name (e.g. line-height-200) or can be a BEM modifier (e.g. color-gray--200). Use one hyphen when it is part of the name, use two hyphens when it is a modifier.
+- A city block size can be part of a name (e.g. 'line-height-200' without a number has no meaning), or can be a BEM modifier (e.g. color-gray--200). Use one hyphen when it is part of the name, use two hyphens when it is a modifier.
 - The standard variant of a pattern gets the modifier '100'.
 - There are two standard variants: with and without a number. Especially useful when you start patterns without variants and you have to add variants later on in a project. You don't want to change all the names in your project.
 - Smaller variants get the modifiers '90', '80', '70',…
@@ -379,7 +379,7 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 - Don't shorten selector or variable names.
 - Shorter selector names could lead to misunderstandings.
 - Shorter selector names don't affect file size that much, because of GZIP.
-- You may use an abbreviation for selectors if it is already used as an official HTML element, e.g. '.nav' instead of '.navigation', or '.h1' instead of '.heading-1'. An exception is 'ui'. You may use 'ui' instead of 'user interface'.
+- You may use an abbreviation for selectors if it is already used as an official HTML element, e.g. '.nav' instead of '.navigation', or '.h1' instead of '.heading-1'. An exception is 'ui'. You may use 'ui' instead of 'user-interface'.
 
 **Right:**
 ```CSS
