@@ -46,7 +46,7 @@ simple-selector > simple-selector {
 ### Rules should be ordered based on specificity
 
 - If you use Less or Sass you should create different directories for each group.
-- Avoid use sub-folders to group files within a group.
+- Avoid sub-folders to group files within a group.
 - Rules within vendors, utilities, or layout are [immutable](http://csswizardry.com/2015/03/immutable-css/).
 
 **Order should be:**
@@ -331,12 +331,12 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 
 ### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'
 
-- A city block size can be part of a name (e.g. 'line-height-200' without a number has no meaning), or can be a BEM modifier (e.g. color-gray--200). Use one hyphen when it is part of the name, use two hyphens when it is a modifier.
 - The standard variant of a pattern gets the modifier '100'.
 - There are two standard variants: with and without a number. Especially useful when you start patterns without variants and you have to add variants later on in a project. You don't want to change all the names in your project.
 - Smaller variants get the modifiers '90', '80', '70',…
 - Large variants get the modifiers '200', '300',…
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
+- A city block size can be part of a name (e.g. 'line-height-200' without a number has no meaning), or can be a BEM modifier (e.g. color-gray--200). Use one hyphen when it is part of the name, use two hyphens when it is a modifier.
 
 **Right:**
 ```Less
