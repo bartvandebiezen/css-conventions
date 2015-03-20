@@ -458,20 +458,20 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 
 **Right:**
 ```Less
-@media-query-palm:       ~"only screen and (max-width:440px)";
-@media-query-palm--s:    ~"only screen and (max-width:320px)";
-@media-query-palm--m:    ~"only screen and (min-width:321px) and (max-width:380px)";
-@media-query-palm--l:    ~"only screen and (min-width:381px) and (max-width:440px)";
-@media-query-lap:        ~"only screen and (min-width:441px) and (max-width:1024px)";
-@media-query-lap--s:     ~"only screen and (min-width:441px) and (max-width:600px)";
-@media-query-lap--m:     ~"only screen and (min-width:601px) and (max-width:800px)";
-@media-query-lap--l:     ~"only screen and (min-width:801px) and (max-width:1024px)";
-@media-query-lap-and-up: ~"only screen and (min-width:441px)";
-@media-query-portable:   ~"only screen and (max-width:1024px)";
-@media-query-desk:       ~"only screen and (min-width:1025px)";
-@media-query-desk--s:    ~"only screen and (min-width:1025px) and (max-width:1200px)";
-@media-query-desk--m:    ~"only screen and (min-width:1201px) and (max-width:1600px)";
-@media-query-desk--l:    ~"only screen and (min-width:1601px)";
+@range-palm:       ~"only screen and (max-width:440px)";
+@range-palm--s:    ~"only screen and (max-width:320px)";
+@range-palm--m:    ~"only screen and (min-width:321px) and (max-width:380px)";
+@range-palm--l:    ~"only screen and (min-width:381px) and (max-width:440px)";
+@range-lap:        ~"only screen and (min-width:441px) and (max-width:1024px)";
+@range-lap--s:     ~"only screen and (min-width:441px) and (max-width:600px)";
+@range-lap--m:     ~"only screen and (min-width:601px) and (max-width:800px)";
+@range-lap--l:     ~"only screen and (min-width:801px) and (max-width:1024px)";
+@range-lap-and-up: ~"only screen and (min-width:441px)";
+@range-portable:   ~"only screen and (max-width:1024px)";
+@range-desk:       ~"only screen and (min-width:1025px)";
+@range-desk--s:    ~"only screen and (min-width:1025px) and (max-width:1200px)";
+@range-desk--m:    ~"only screen and (min-width:1201px) and (max-width:1600px)";
+@range-desk--l:    ~"only screen and (min-width:1601px)";
 ```
 
 **Wrong:**
