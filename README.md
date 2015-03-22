@@ -336,7 +336,7 @@ See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mi
 - Smaller variants get the modifiers '90', '80', '70',…
 - Large variants get the modifiers '200', '300',…
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
-- A city block size can be part of a name (e.g. 'line-height-200' without a number has no meaning), or can be a BEM modifier (e.g. color-gray--200). Use one hyphen when it is part of the name, use two hyphens when it is a modifier.
+- City block sizes for Less or Sass variables should be written as part of the name (right: '@line-height-200') and should not be written as BEM modifiers (wrong: '@line-height--200').
 
 **Right:**
 ```Less
