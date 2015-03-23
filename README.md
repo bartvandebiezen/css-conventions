@@ -56,13 +56,15 @@ simple-selector > simple-selector {
 3. **fonts** (font-facing)
 4. **settings** (variables and configs, e.g. colors, fonts families, font sizes)
 5. **utilities** (e.g. your own mixins, functions, and tools)
-6. **reset** (e.g. normalize.css and box-sizing)
+6. **reset** (e.g. [normalize.css](http://necolas.github.io/normalize.css/) and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
 7. **base** (HTML tags or objects without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
 8. **layout** (immutable wrapping and constraining objects, e.g. grid, drawer container, chapter sections, body with a sticky footer)
 9. **components** (e.g. date selector, stepper, page-header, page-footer)
 10. **pages** (page specific styles. Before you add page specific styles, consider modified components)
 11. **themes** (for many projects non-existent)
 12. **overrides** (hacks and things we are not proud of)
+
+See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph/) and [CSS Specificity Graph Generator](http://jonassebastianohlsson.com/specificity-graph/) for more information about CSS specificity.
 
 ### For Less or Sass, use separate files for different rule groups
 
