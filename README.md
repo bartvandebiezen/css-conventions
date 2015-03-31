@@ -462,19 +462,19 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 
 **Right:**
 ```Less
-@range-palm:       ~"only screen and (max-width:440px)";
+@range-palm:       ~"only screen and (max-width:480px)";
 @range-palm--s:    ~"only screen and (max-width:320px)";
-@range-palm--m:    ~"only screen and (min-width:321px) and (max-width:380px)";
-@range-palm--l:    ~"only screen and (min-width:381px) and (max-width:440px)";
-@range-lap:        ~"only screen and (min-width:441px) and (max-width:1024px)";
-@range-lap--s:     ~"only screen and (min-width:441px) and (max-width:600px)";
-@range-lap--m:     ~"only screen and (min-width:601px) and (max-width:800px)";
-@range-lap--l:     ~"only screen and (min-width:801px) and (max-width:1024px)";
-@range-lap-and-up: ~"only screen and (min-width:441px)";
+@range-palm--m:    ~"only screen and (min-width:321px) and (max-width:400px)";
+@range-palm--l:    ~"only screen and (min-width:401px) and (max-width:480px)";
+@range-lap:        ~"only screen and (min-width:481px) and (max-width:1024px)";
+@range-lap--s:     ~"only screen and (min-width:481px) and (max-width:640px)";
+@range-lap--m:     ~"only screen and (min-width:641px) and (max-width:820px)";
+@range-lap--l:     ~"only screen and (min-width:821px) and (max-width:1024px)";
+@range-lap-and-up: ~"only screen and (min-width:481px)";
 @range-portable:   ~"only screen and (max-width:1024px)";
 @range-desk:       ~"only screen and (min-width:1025px)";
-@range-desk--s:    ~"only screen and (min-width:1025px) and (max-width:1200px)";
-@range-desk--m:    ~"only screen and (min-width:1201px) and (max-width:1600px)";
+@range-desk--s:    ~"only screen and (min-width:1025px) and (max-width:1280px)";
+@range-desk--m:    ~"only screen and (min-width:1281px) and (max-width:1600px)";
 @range-desk--l:    ~"only screen and (min-width:1601px)";
 ```
 
