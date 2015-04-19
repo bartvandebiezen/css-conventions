@@ -2,7 +2,7 @@
 
 The goal of these conventions are to create reusable stylesheets and to keep them maintainable, transparent, readable, and scalable. And to make it as painless as possible to work with.
 
-Altough Less is used for the examples, it does not matter if you use Less, Sass, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
+Although Less is used for the examples, it does not matter if you use Less, Sass, or even plain CSS. Choose a language based on the nature of your project. Each language has its own strengths.
 
 For these conventions a [CSScomb config file is available](configs/csscomb.json).
 
@@ -52,13 +52,13 @@ simple-selector > simple-selector {
 **Order should be:**
 
 1. **vendors** (e.g. Bourbon, Bootstrap, jQuery UI)
-2. **vendor-overrides** (to re-declare some vendor CSS, if needed)
-3. **fonts** (font-facing)
-4. **settings** (variables and configs, e.g. colors, fonts families, font sizes)
-5. **utilities** (e.g. your own mixins, functions, and tools)
+2. **fonts** (font-facing)
+3. **settings** (variables and configs, e.g. colors, fonts families, font sizes)
+4. **utilities** (e.g. your own mixins, functions, and tools)
+5. **vendor-overrides** (to re-declare some vendor CSS with help of settings and utilities, if needed)
 6. **reset** (e.g. [normalize.css](http://necolas.github.io/normalize.css/) and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
 7. **base** (HTML tags or objects without sub elements (a.k.a. atoms), e.g. body, h1-h6 styles, buttons, basic inputs)
-8. **layout** (immutable wrapping and constraining objects, e.g. grid, drawer container, chapter sections, body with a sticky footer)
+8. **layout** (immutable wrapping and constraining objects, e.g. grid, sheets, boxes, body with a sticky footer)
 9. **components** (e.g. date selector, stepper, page-header, page-footer)
 10. **pages** (page specific styles. Before you add page specific styles, consider modified components)
 11. **themes** (for many projects non-existent)
@@ -71,10 +71,10 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 **File names should be:**
 
 1. **vendors**: original file name.
-2. **vendor-overrides**: same as vendor's file name.
-3. **fonts**: name of typeface.
-4. **settings**: name of property or use.
-5. **utilities**: name of function or mixin.
+2. **fonts**: name of typeface.
+3. **settings**: name of property or use.
+4. **utilities**: name of function or mixin.
+5. **vendor-overrides**: same as vendor's file name.
 6. **reset**: original file name or function name.
 7. **base**: name of element or logical group of elements, e.g. headings, figure.
 8. **layout**: name of container or function.
@@ -219,7 +219,7 @@ selector {
 
 ### Value lists should be written on the same line
 
-- Exception: only very long comma separated values, such as font-face urls and gradients, may be written on different lines to improve readability.
+- Exception: only very long comma separated values, such as font-face URLs and gradients, may be written on different lines to improve readability.
 
 **Right:**
 ```CSS
@@ -423,18 +423,16 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 
 **Right:**
 ```Less
-// # Colors
-
-// ## Descriptive colors
+// Descriptive colors
 
 @color-silver: rgb(50, 50, 50);
 
-// ## Functional colors
+// Functional colors
 
 @color-primary: @color-silver;
-@color-primary--90: lighten(@color-primary--100, 10%)
-@color-primary--100: @color-primary;
-@color-primary--200: darken(@color-primary--100, 10%)
+@color-primary-90: lighten(@color-primary-100, 10%)
+@color-primary-100: @color-primary;
+@color-primary-200: darken(@color-primary-100, 10%)
 ```
 
 **Wrong:**
@@ -444,38 +442,36 @@ See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfB
 
 See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
 
-### Names of media queries should be based on human ergonomics
+### Names of media queries should be based on the context of a device
 
 - There are major and minor ranges.
-- Major ranges should be based on human ergonomics.
-- If human ergonomics is not directly applicable, describe media queries as objects as close as possible to the human body.
+- Major ranges should be based on the context of a device.
 - Minor ranges (a.k.a. tweak points) are based on size differences within major ranges.
 - Breakpoints should only be used if the content requires it.
-- Breakpoints are currently based on size differences, but don't have to be.
 
-**Visual presentation of the breakpoints:**
+**Visual presentation of ranges:**
 ```
-──palm─┤──lap──┤─desk────────────
-───portable────┤
-       ├──lap-and-up─────────────
+---palm--|--hand--|--lap--|--desk---
 ```
 
 **Right:**
 ```Less
-@range-palm:       ~"only screen and (max-width:480px)";
-@range-palm--s:    ~"only screen and (max-width:320px)";
-@range-palm--m:    ~"only screen and (min-width:321px) and (max-width:400px)";
-@range-palm--l:    ~"only screen and (min-width:401px) and (max-width:480px)";
-@range-lap:        ~"only screen and (min-width:481px) and (max-width:1024px)";
-@range-lap--s:     ~"only screen and (min-width:481px) and (max-width:640px)";
-@range-lap--m:     ~"only screen and (min-width:641px) and (max-width:820px)";
-@range-lap--l:     ~"only screen and (min-width:821px) and (max-width:1024px)";
-@range-lap-and-up: ~"only screen and (min-width:481px)";
-@range-portable:   ~"only screen and (max-width:1024px)";
-@range-desk:       ~"only screen and (min-width:1025px)";
-@range-desk--s:    ~"only screen and (min-width:1025px) and (max-width:1280px)";
-@range-desk--m:    ~"only screen and (min-width:1281px) and (max-width:1600px)";
-@range-desk--l:    ~"only screen and (min-width:1601px)";
+@range-palm:       ~"only screen and (max-width:460px)";
+@range-palm--s:    ~"only screen and (max-width:340px)";
+@range-palm--m:    ~"only screen and (min-width:341px) and (max-width:400px)";
+@range-palm--l:    ~"only screen and (min-width:401px) and (max-width:460px)";
+@range-hand:       ~"only screen and (min-width:461px) and (max-width:700px)";
+@range-hand--s:    ~"only screen and (min-width:461px) and (max-width:540px)";
+@range-hand--m:    ~"only screen and (min-width:541px) and (max-width:620px)";
+@range-hand--l:    ~"only screen and (min-width:621px) and (max-width:700px)";
+@range-lap:        ~"only screen and (min-width:701px) and (max-width:1060px)";
+@range-lap--s:     ~"only screen and (min-width:701px) and (max-width:820px)";
+@range-lap--m:     ~"only screen and (min-width:821px) and (max-width:940px)";
+@range-lap--l:     ~"only screen and (min-width:941px) and (max-width:1060px)";
+@range-desk:       ~"only screen and (min-width:1061px)";
+@range-desk--s:    ~"only screen and (min-width:1061px) and (max-width:1300px)";
+@range-desk--m:    ~"only screen and (min-width:1301px) and (max-width:1660px)";
+@range-desk--l:    ~"only screen and (min-width:1661px)";
 ```
 
 **Wrong:**
@@ -499,8 +495,8 @@ See ['Responsive grid systems; a solution?'](http://csswizardry.com/2013/02/resp
 ```CSS
 .menu-item {}
 .is-highlighted {}
-.chapter {}
-.drawer {}
+.page-row {}
+.sheet {}
 ```
 
 **Wrong:**
@@ -590,14 +586,14 @@ selector.is-loading {}
 
 **Right:**
 ```CSS
-.user-content td p {
+.content td p {
 	property: value;
 }
 ```
 
 **Wrong:**
 ```CSS
-.user-content table td p {
+.content table td p {
 	property: value;
 }
 ```
@@ -630,18 +626,21 @@ simple-selector {
 ### Do nest pseudo-classes, pseudo-elements, media queries, and states with Less or Sass
 
 - Makes sure style and behavior of the same selector are grouped.
-- Nested pseudo-classes, pseudo-elements, media queries, and states should not be separated by an empty line.
+- Nested pseudo-classes, pseudo-elements, media queries, and states should also be separated by an empty line.
 
 **Right:**
 ```Less
 selector {
 	property: value;
+
 	&:hover {
 		property: value;
 	}
-	@media @media-query {
+
+	@media @range-desk {
 		property: value;
 	}
+
 }
 ```
 
@@ -655,7 +654,7 @@ selector:hover {
 	property: value;
 }
 
-@media @media-query {
+@media @range-desk {
 	selector {
 		property: value;
 	}
@@ -667,7 +666,7 @@ selector:hover {
 ### All declarations should end with a semi-colon. Even the last declaration within a rule
 
 - Makes it easier to reorder or add declarations.
-- Removing the last semi-colon is needles optimization. Automate this with the compiler.
+- Removing the last semi-colon is needles optimization. Automate this with a compiler or script.
 
 ## Values
 
@@ -698,8 +697,7 @@ hsla(120, 100%, 50%, 1);
 - Makes it easier to integrate images or other media formats based on pixels in your layout.
 - Makes sure you don't get nummers like '0.29310344827586204em' (this is an actual used number).
 - Sizing in pixels reduces development time.
-- Fonts and line-heights look more identical between browsers.
-- Sizes in ems are allowed, but only in specific cases: when it should actually be based on the current font-size. For example a max width of 30 ems to make sure lines never get too long.
+- Sizes in ems or rems are allowed, but only when it should actually be based on the font-size. For example a max width of 30 ems to make sure lines never get too long.
 
 See ['W3C Recommendations about lengths'](http://www.w3.org/TR/CSS21/syndata.html#length-units) for further reading.
 
@@ -850,7 +848,7 @@ selector {
 **Right:**
 ```CSS
 /*
-# Image
+Image
 1. Makes it responsive.
 */
 
@@ -890,6 +888,27 @@ selector {
 	property: red; /* TODO 2015 04 04: Change value to blue */
 }
 ```
+
+### Use DocBlock comments for components
+
+To make component based development and reuse of components easier, it is advised to add descriptions for each component. For this, you can use file-level DocBlock style commenting, often seen in C++ and PHP code. A file-level DocBlock contains a short description, optional long description, and tags. A lot of [tools](https://packagecontrol.io/packages/DocBlockr) are available for writing DocBlocks. Because DocBlock has its own [conventions](http://www.phpdoc.org/docs/latest/getting-started/your-first-set-of-documentation.html), the conventions for comments written earlier in this document do not apply to DocBlock comments.
+
+**Right:**
+```css
+/**
+ * Hero block
+ *
+ * The hero contains the main focal point for a page or section. This components
+ * contains the option to style different type of heros: hero often used for the
+ * homepage; hero used for sub pages: and a hero used for a section that is not
+ * directly visible.
+ * @version 0.4
+ * @author  Bart van de Biezen <bart@bartvandebiezen.com>
+ * @todo     Add element hero__play-button to start a hero video.
+*/
+```
+
+See [phpDocumentor documentation](http://www.phpdoc.org/docs/latest/getting-started/your-first-set-of-documentation.html) or [Sublime DocBlockr package](https://packagecontrol.io/packages/DocBlockr) for further reading.
 
 ## Acknowledgements and Further Reading
 
