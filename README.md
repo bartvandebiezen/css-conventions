@@ -163,7 +163,7 @@ selector {
 **Right:**
 ```CSS
 selector,
-mini-selector mini-selector,
+simple-selector simple-selector,
 selector {
 	property: value;
 }
@@ -171,7 +171,7 @@ selector {
 
 **Wrong:**
 ```CSS
-selector, mini-selector mini-selector, selector {
+selector, simple-selector simple-selector, selector {
 	property: value;
 }
 ```
@@ -580,7 +580,7 @@ selector.is-loading {}
 
 ## Nesting
 
-### A selector may contain no more than three mini selectors
+### A selector may contain no more than three simple selectors
 
 - Even when using the BEM methodology, you cannot avoid cascading. Think about content where you have little control, such as user generated content. In these cases it is allowed to cascade, but never deeper than three levels.
 
