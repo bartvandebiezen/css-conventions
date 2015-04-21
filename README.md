@@ -78,7 +78,7 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 6. **reset**: original file name or function name.
 7. **base**: name of element or logical group of elements, e.g. text, figure.
 8. **layout**: name of container or function.
-9. **components**: two files per component: the original component in a singular filename (e.g. collection.less or _collection.scss); modified components or derivatives in a plural filename (collections.less or _collections.scss).
+9. **components**: two files per component: the original component in a singular filename (e.g. collection.less or _collection.scss); modified components or derivatives in a plural filename (e.g. collections.less or _collections.scss).
 10. **pages**: name of page or template.
 11. **themes**: name of the theme.
 12. **overrides**: depends on type.
