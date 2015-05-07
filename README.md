@@ -331,7 +331,7 @@ See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel
 ```
 
 
-See [BEM](https://bem.info) and [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) for further reading.
+See [BEM](https://bem.info), [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), and [Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/) for further reading.
 
 ### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'
 
@@ -889,26 +889,28 @@ selector {
 }
 ```
 
-### Use DocBlock comments for components
+### Use KSS for documenting CSS components
 
-To make component based development and reuse of components easier, it is advised to add descriptions for each component. For this, you can use file-level DocBlock style commenting, often seen in C++ and PHP code. A file-level DocBlock contains a short description, optional long description, and tags. A lot of [tools](https://packagecontrol.io/packages/DocBlockr) are available for writing DocBlocks. Because DocBlock has its own [conventions](http://www.phpdoc.org/docs/latest/getting-started/your-first-set-of-documentation.html), the conventions for comments written earlier in this document do not apply to DocBlock comments.
+To make component based development, generating pattern libraries and reuse of components easier, it is advised to add documentation for each component. For this, you can use [KSS style commenting](https://github.com/kneath/kss) (also see [KSS-node](https://github.com/kss-node/kss-node) or [SC5](https://github.com/SC5/sc5-styleguide)). Because KSS has its own conventions, the conventions for comments written earlier in this document do not apply to KSS comments.
 
 **Right:**
 ```css
-/**
- * Hero block
- *
- * The hero contains the main focal point for a page or section. This components
- * contains the option to style different type of heros: hero often used for the
- * homepage; hero used for sub pages: and a hero used for a section that is not
- * directly visible.
- * @version 0.4
- * @author  Bart van de Biezen <bart@bartvandebiezen.com>
- * @todo     Add element hero__play-button to start a hero video.
+/*
+Buttons
+
+A majority of buttons in the site are built from the same base class.
+
+Markup: buttons.hbs
+
+:hover     - Highlight the button when hovered.
+:disabled  - Make the button change appearance to reflect it being disabled.
+:active    - "Press" the button down when clicked.
+
+Style guide: components - buttons
 */
 ```
 
-See [phpDocumentor documentation](http://www.phpdoc.org/docs/latest/getting-started/your-first-set-of-documentation.html) or [Sublime DocBlockr package](https://packagecontrol.io/packages/DocBlockr) for further reading.
+See [KSS](https://github.com/kneath/kss), [KSS-node](https://github.com/kss-node/kss-node), and [SC5](https://github.com/SC5/sc5-styleguide) for further reading.
 
 ## Acknowledgements and Further Reading
 
