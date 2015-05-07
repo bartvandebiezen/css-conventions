@@ -56,7 +56,7 @@ simple-selector > simple-selector {
 3. **settings** (variables and configs, e.g. colors, fonts families, font sizes)
 4. **utilities** (e.g. your mixins, functions, and tools)
 5. **vendor-overrides** (to re-declare some vendor CSS with help of settings and utilities, if needed)
-6. **reset** (e.g. [normalize.css](http://necolas.github.io/normalize.css/) and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
+6. **reset** (e.g. [Reset CSS](http://meyerweb.com/eric/tools/css/reset/), [normalize.css](http://necolas.github.io/normalize.css/), and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
 7. **base** (HTML tags, e.g. body, h1-h6 styles, button, input)
 8. **layout** (immutable cosmetic-free objects, e.g. grid, sheets, boxes, body with a sticky footer)
 9. **components** (designed interface elements and blocks e.g. date selector, stepper, page-header, page-footer)
@@ -335,7 +335,7 @@ See [BEM](https://bem.info), [CSS Wizardry](http://csswizardry.com/2013/01/mindb
 ### Never style HTML elements directly, always use class names.
 
 - Also applies to typographic elements such as 'h1' and 'p'. For user content or other content containing only HTML elements without class names, use the class '.content' as a container.
-- Exception is the reset stylesheet.
+- Exception applies to rules in reset folder.
 
 **Right:**
 ```CSS
