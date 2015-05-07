@@ -330,8 +330,28 @@ See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel
 .block__block__element {}
 ```
 
-
 See [BEM](https://bem.info), [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), and [Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/) for further reading.
+
+### Never style HTML elements directly, always use class names.
+
+- Also applies to typographic elements such as 'h1' and 'p'. For user content or other content containing only HTML elements without class names, use the class '.content' as a container.
+- Exception is the reset stylesheet.
+
+**Right:**
+```CSS
+.content h1 {}
+.content p {}
+.content ul {}
+```
+
+**Wrong:**
+```CSS
+h1 {}
+p {}
+ul {}
+```
+
+See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typography) and [Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/) for further reading.
 
 ### Names of variants (within a rhythm) for selectors or variables should follow 'city block sizes'
 
