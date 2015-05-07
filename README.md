@@ -56,7 +56,7 @@ simple-selector > simple-selector {
 3. **settings** (variables and configs, e.g. colors, fonts families, font sizes)
 4. **utilities** (e.g. your mixins, functions, and tools)
 5. **vendor-overrides** (to re-declare some vendor CSS with help of settings and utilities, if needed)
-6. **reset** (e.g. [Reset CSS](http://meyerweb.com/eric/tools/css/reset/), [normalize.css](http://necolas.github.io/normalize.css/), and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
+6. **reset** (e.g. [Reset CSS](http://meyerweb.com/eric/tools/css/reset/) or [normalize.css](http://necolas.github.io/normalize.css/), and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
 7. **layout** (immutable cosmetic-free objects, e.g. grid, body with a sticky footer)
 8. **components** (designed interface elements and blocks e.g. headings, date selector, stepper, page-header, page-footer)
 9. **pages** (page specific styles. Before you add page specific styles, consider modified components)
@@ -76,7 +76,7 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 5. **vendor-overrides**: same as vendor's file name.
 6. **reset**: original file name or function name.
 7. **layout**: name of container or function.
-8. **components**: file per component or group components.
+8. **components**: name of component or group.
 9. **pages**: name of page or template.
 10. **themes**: name of the theme.
 11. **overrides**: depends on type.
