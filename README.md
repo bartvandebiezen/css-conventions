@@ -53,16 +53,17 @@ simple-selector > simple-selector {
 
 1. **vendors** (e.g. Bourbon, Bootstrap, jQuery UI)
 2. **fonts** (font-facing)
-3. **settings** (variables and configs, e.g. colors, fonts families, font sizes)
+3. **settings** (variables and configs, e.g. colors, fonts families, font sizes, line heights)
 4. **utilities** (e.g. your mixins, functions, and tools)
 5. **vendor-overrides** (to re-declare some vendor CSS with help of settings and utilities, if needed)
 6. **reset** (e.g. [Reset CSS](http://meyerweb.com/eric/tools/css/reset/) or [normalize.css](http://necolas.github.io/normalize.css/), and [box-sizing](http://www.paulirish.com/2012/box-sizing-border-box-ftw/))
-7. **base** (typography, controls, and other basic elements)
-8. **layout** (immutable cosmetic-free objects, e.g. grid, body with a sticky footer)
-9. **components** (designed interface blocks e.g. collection, toolbar, page-header, page-footer)
-10. **pages** (page specific styles. Before you add page specific styles, consider modified components)
-11. **themes** (for many projects non-existent)
-12. **overrides** (hacks and things we are not proud of)
+7. **layout** (immutable cosmetic-free objects, e.g. grid, body with a sticky footer)
+8. **typography** (e.g. headings, text, code, lists, quotes)
+9. **controls** (e.g. buttons, segmented-controls, pull-down-menus, text-inputs)
+10. **components** (designed interface blocks: bars, dialogs, indicators, views)
+11. **pages** (page specific styles. Before you add page specific styles, consider modified components)
+12. **themes** (for many projects non-existent)
+13. **overrides** (hacks and things we are not proud of)
 
 See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph/) and [CSS Specificity Graph Generator](http://jonassebastianohlsson.com/specificity-graph/) for more information about CSS specificity.
 
@@ -76,12 +77,13 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 4. **utilities**: name of function or mixin.
 5. **vendor-overrides**: same as vendor's file name.
 6. **reset**: original file name or function name.
-7. **base**: name of typography group, control, or element.
-8. **layout**: name of container or function.
-9. **components**: name of component or group.
-10. **pages**: name of page or template.
-11. **themes**: name of the theme.
-12. **overrides**: depends on type.
+7. **layout**: name of container or function.
+8. **typography**: name of typography group.
+9. **controls**: name of control.
+10. **components**: name of block.
+11. **pages**: name of page or template.
+12. **themes**: name of the theme.
+13. **overrides**: depends on type.
 
 ### Do not use @import for CSS files
 
