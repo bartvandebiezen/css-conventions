@@ -332,7 +332,7 @@ See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel
 .block__block__element {}
 ```
 
-See [BEM](https://bem.info), [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), and [Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/) for further reading.
+See [BEM](https://bem.info), [CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/), [Google's Web Fundamentals](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations#use-block-element-modifier), and [Side Effects in CSS](http://philipwalton.com/articles/side-effects-in-css/) for further reading.
 
 ### Never style HTML elements directly, always use class names.
 
