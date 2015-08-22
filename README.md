@@ -549,22 +549,22 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 
 **Right:**
 ```Less
-@range-palm:       ~"only screen and (max-width:460px)";
-@range-palm--s:    ~"only screen and (max-width:340px)";
-@range-palm--m:    ~"only screen and (min-width:341px) and (max-width:400px)";
-@range-palm--l:    ~"only screen and (min-width:401px) and (max-width:460px)";
-@range-hand:       ~"only screen and (min-width:461px) and (max-width:700px)";
-@range-hand--s:    ~"only screen and (min-width:461px) and (max-width:540px)";
-@range-hand--m:    ~"only screen and (min-width:541px) and (max-width:620px)";
-@range-hand--l:    ~"only screen and (min-width:621px) and (max-width:700px)";
-@range-lap:        ~"only screen and (min-width:701px) and (max-width:1060px)";
-@range-lap--s:     ~"only screen and (min-width:701px) and (max-width:820px)";
-@range-lap--m:     ~"only screen and (min-width:821px) and (max-width:940px)";
-@range-lap--l:     ~"only screen and (min-width:941px) and (max-width:1060px)";
-@range-desk:       ~"only screen and (min-width:1061px)";
-@range-desk--s:    ~"only screen and (min-width:1061px) and (max-width:1300px)";
-@range-desk--m:    ~"only screen and (min-width:1301px) and (max-width:1660px)";
-@range-desk--l:    ~"only screen and (min-width:1661px)";
+@range-palm:      ~"only screen and (max-width:440px)";
+@range-palm-s:    ~"only screen and (max-width:320px)";
+@range-palm-m:    ~"only screen and (min-width:321px) and (max-width:360px)";
+@range-palm-l:    ~"only screen and (min-width:361px) and (max-width:440px)";
+@range-hand:      ~"only screen and (min-width:441px) and (max-width:680px)";
+@range-hand-s:    ~"only screen and (min-width:441px) and (max-width:520px)";
+@range-hand-m:    ~"only screen and (min-width:521px) and (max-width:600px)";
+@range-hand-l:    ~"only screen and (min-width:601px) and (max-width:680px)";
+@range-lap:       ~"only screen and (min-width:681px) and (max-width:1040px)";
+@range-lap-s:     ~"only screen and (min-width:681px) and (max-width:800px)";
+@range-lap-m:     ~"only screen and (min-width:801px) and (max-width:920px)";
+@range-lap-l:     ~"only screen and (min-width:921px) and (max-width:1040px)";
+@range-desk:      ~"only screen and (min-width:1041px)";
+@range-desk-s:    ~"only screen and (min-width:1041px) and (max-width:1280px)";
+@range-desk-m:    ~"only screen and (min-width:1281px) and (max-width:1600px)";
+@range-desk-l:    ~"only screen and (min-width:1601px)";
 ```
 
 **Wrong:**
