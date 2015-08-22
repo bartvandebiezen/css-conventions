@@ -108,6 +108,55 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 
 Tools like [CSScomb](http://csscomb.com), in combination with [a CSScomb config file](configs/csscomb.json) based on these conventions, can be used to automate ordering.
 
+### Place rules in media queries, unless applicable for all media queries
+
+Only rules applicable to all media queries should be placed outside a media query. All other rules should be written per media query. This makes sure you never have to overwrite rules in an other media query, the code is easier to read, and it [improves render performance](http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/). This means that you should not write CSS rules mobile first and change the rules for bigger viewports. You write CSS rules meant for a viewport only for that specific viewport. This does not mean you shouldn't design mobile first.
+
+**Wrong:**
+```CSS
+.class {
+	background-color: red;
+	padding: 20px;
+}
+
+@media screen and (min-width: 441px) {
+    .class {
+        padding: 40px;
+    }
+}
+
+@media screen and (min-width: 1041px) {
+    .class {
+        padding: 60px;
+    }
+}
+```
+
+**Right:**
+```CSS
+.class {
+	background-color: red;
+}
+
+@media screen and (max-width: 440px) {
+    .class {
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 441px) and (max-width: 1040px) {
+    .class {
+        padding: 40px;
+    }
+}
+
+@media screen and (min-width: 1041px) {
+    .class {
+        padding: 60px;
+    }
+}
+```
+
 ## Spacing
 
 ### Indents should be done with one tab, not spaces
