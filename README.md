@@ -414,7 +414,7 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 - City block sizes for Less or Sass variables should be written as part of the name (right: '@line-height-200') and should not be written as BEM modifiers (wrong: '@line-height--200').
 
 **Right:**
-```Less
+```CSS
 .button--90 {
 	property: value;
 }
@@ -448,6 +448,28 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 ```
 
 See ['How to build the perfect pattern library'](http://www.slideshare.net/WolfBruening/how-to-build-the-perfect-pattern-libraryy) for further reading.
+
+### Fractions used for grids and modifiers should be written out in full
+
+City block sizes are used for rhythms, never for exact values or fractions. When you want to specify that an object should be exactly one third or two tenths of a width, add modifiers as: .class--one-third or .class--two-tenths. When you want to create a modifier for full width, use: .class--full.
+
+**Right:**
+```CSS
+.class--one-third {}
+.class--two-tenths {}
+.class--full {}
+```
+
+**Wrong:**
+```CSS
+.class--1-3 {}
+.class--2-10 {}
+.class--1 {}
+
+.class--80 {}
+.class--90 {}
+.class--100 {}
+```
 
 ### Names of selectors or variables should be written out in full
 
