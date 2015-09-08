@@ -410,6 +410,7 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 - There are two standard variants: with and without a number. Especially useful when you start patterns without variants and you have to add variants later on in a project. You don't want to change all the names in your project.
 - Smaller variants get the modifiers '90', '80', '70',…
 - Large variants get the modifiers '200', '300',…
+- A modifier that removes paddings or height from a block can be written as '0', for example pane--0 is a section without padding-top and padding-bottom.
 - Numbers don't resemble exact size ratios, because that would be descriptive naming: button--200 is not necessary twice as large as button--100.
 - City block sizes for Less or Sass variables should be written as part of the name (right: '@line-height-200') and should not be written as BEM modifiers (wrong: '@line-height--200').
 
@@ -469,6 +470,32 @@ City block sizes are used for rhythms, never for exact values or fractions. When
 .class--80 {}
 .class--90 {}
 .class--100 {}
+```
+
+### Modifiers for different flex-grows should be written out in full
+
+Depending on the 'grow value' (default is 1) and the amount of elements within a flex container, an element takes more or less space within the flex container. Flex-grow doesn't dictate a fixed size or fraction, it is a unit-less value. For more about flex-grow and Flexbox Layout see ['A Complete Guide to Flexbox'](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). These unit-less values should be written out in full.
+
+**Right:**
+```CSS
+.class--takes-two {
+	flex-grow: 2;
+}
+
+.class--takes-three {
+	flex-grow: 3;
+}
+```
+
+**Wrong:**
+```CSS
+.class--2 {
+	flex-grow: 2;
+}
+
+.class--3 {
+	flex-grow: 3;
+}
 ```
 
 ### Names of selectors or variables should be written out in full
