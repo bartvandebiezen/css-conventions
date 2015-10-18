@@ -560,6 +560,31 @@ Depending on the 'grow value' (default is 1) and the amount of elements within a
 @color-primary: rgb(50, 50, 50);
 ```
 
+### Local variables should start with the name of the block and end with a property
+
+- Local variables are written directly above the block rule in the same file.
+- Local variables may only be used in the block it is created for. Local variables written above the block rule are technically not local in Sass and Less and can be used everywhere. You should never do this.
+- Local variables should function as 'settings' for a whole block.
+- For local variables, combine name of the block and, in some cases, the element with the property. Only use hyphens as delimiters. Do not use the BEM notation.
+- Make as few settings as possible, and try to use block settings for elements. For example border colors are not always set on a block but on different elements within a block. If the border color should be the same for all these elements, create only one block setting.
+- Use local variables mostly for colors.
+- Use global functional colors, not descriptive colors, to set local variables.
+- Within Sass, local variables are set as default variables with '!default'.
+
+Example written for Sass:
+
+**Right:**
+```SCSS
+$button-background-color: $color-secondary !default;
+$button-border-color: $color-secondary-200 !default;
+```
+
+**Wrong:**
+```SCSS
+$button-background-color: $color-red !default;
+$border-color-button: $color-secondary-200;
+```
+
 See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
 
 ### Names of media queries should be based on the context of a device
@@ -747,6 +772,7 @@ simple-selector {
 
 - Makes sure style and behavior of the same selector are grouped.
 - Nested pseudo-classes, pseudo-elements, media queries, and states should also be separated by an empty line.
+- Place media queries with rules for a pseudo-element within that pseudo-element. Also the behavior of pseudo-elements should be grouped. As a result, you also don't have to repeat the pseudo-element per media query.
 
 **Right:**
 ```Less
