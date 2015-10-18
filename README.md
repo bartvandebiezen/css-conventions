@@ -560,6 +560,8 @@ Depending on the 'grow value' (default is 1) and the amount of elements within a
 @color-primary: rgb(50, 50, 50);
 ```
 
+See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
+
 ### Local variables should start with the name of the block and end with a property
 
 - Local variables are written directly above the block rule in the same file.
@@ -584,8 +586,6 @@ $button-border-color: $color-secondary-200 !default;
 $button-background-color: $color-red !default;
 $border-color-button: $color-secondary-200;
 ```
-
-See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example for finding descriptive names.
 
 ### Names of media queries should be based on the context of a device
 
