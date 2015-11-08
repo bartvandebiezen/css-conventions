@@ -772,38 +772,46 @@ simple-selector {
 
 - Makes sure style and behavior of the same selector are grouped.
 - Nested pseudo-classes, pseudo-elements, media queries, and states should also be separated by an empty line.
-- Place media queries with rules for a pseudo-element within that pseudo-element. Also the behavior of pseudo-elements should be grouped. As a result, you also don't have to repeat the pseudo-element per media query.
+- The behavior of a pseudo-element should be grouped. Place media queries with rules for a pseudo-element within that pseudo-element. As a result, you don't have to repeat the pseudo-element per media query.
+- They way you nest pseudo-elements and pseudo-classes is very different. Pseudo-classes should be nested within media queries when its styling is different per media query. That means you have to repeat pseudo-classes for every media query. The styling of a pseudo-class is related to the styling of the selector per media query.
 
 **Right:**
 ```Less
 selector {
 	property: value;
 
-	&:hover {
+	@media @range-lap {
 		property: value;
+
+		&:last-child {
+			property: value;
+		}
+
 	}
 
 	@media @range-desk {
 		property: value;
+
+		&:last-child {
+			property: value;
+			property: value;
+		}
+
 	}
 
-}
-```
-
-**Wrong:**
-```Less
-selector {
-	property: value;
-}
-
-selector:hover {
-	property: value;
-}
-
-@media @range-desk {
-	selector {
+	&::after {
 		property: value;
+
+		@media @range-lap {
+			property: value;
+			property: value;
+		}
+
+		@media @range-desk {
+			property: value;
+		}
 	}
+
 }
 ```
 
