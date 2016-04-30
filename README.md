@@ -63,7 +63,7 @@ simple-selector > simple-selector {
 10. **components** (designed interface blocks: bars, dialogs, indicators, views)
 11. **pages** (page specific styles. Before you add page specific styles, consider modified components)
 12. **themes** (for many projects non-existent)
-13. **overrides** (hacks and things we are not proud of)
+13. **overrides** (hacks and things you are not proud of)
 
 See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph/) and [CSS Specificity Graph Generator](http://jonassebastianohlsson.com/specificity-graph/) for more information about CSS specificity.
 
@@ -71,11 +71,11 @@ See [The Specificity Graph](http://csswizardry.com/2014/10/the-specificity-graph
 
 **File names should be:**
 
-1. **vendors**: original file name.
+1. **vendors**: original directories and file names.
 2. **fonts**: name of typeface.
 3. **settings**: name of property or use.
 4. **utilities**: name of function or mixin.
-5. **vendor-overrides**: same as vendor's file name.
+5. **vendor-overrides**: same as vendor's directories or file names.
 6. **reset**: original file name or function name.
 7. **layout**: name of container or function.
 8. **typography**: name of typography group.
@@ -303,7 +303,7 @@ selector {
 
 ### Other spacing conventions
 
-- Remove spaces before and after a selector combinator (e.g. '>').
+- Add spaces before and after a selector combinator (e.g. ' > ').
 - Remove spaces before selector delimiter (',').
 - Add a space between selector and opening brace ('{').
 - Add a line break after the opening brace ('{').
@@ -351,9 +351,11 @@ See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel
 - Name of a modified block or element is a combination between the name and the modifier, divided with two hyphens '--'.
 - Modification means a different version of a block or element.
 - Modifiers are timeless. Use 'states' if a 'different version' is temporarily.
-- A block can be nested within another block if that block is often used by itself. The nested block has at least two class names: (1) the block name itself and (2) as an element of the surrounding block.
+- A block can be nested within another block if that block is often used by itself. The nested block has at least two class names in this order: (1) as an element of the surrounding block and (2) the block name itself.
 - A class does not reflect the full trail of the DOM. Only one block or element is allowed within a class name.
 - When is a block a modified block or a complete new block? Is it '.small-project' or 'project--small'? A modified block still inherits a lot of styling from the original block. A new block is completely independent from the original block. You determine the tipping point, but if in doubt create a new block.
+- It is not allowed to give an element two block classes or two element classes.
+- It is not allowed to place an element class from a block in another block.
 
 **Right:**
 ```CSS
@@ -416,11 +418,12 @@ See [Modular CSS typography](http://thesassway.com/advanced/modular-css-typograp
 
 **Right:**
 ```CSS
-.button--90 {
+
+.button {
 	property: value;
 }
 
-.button {
+.button--90 {
 	property: value;
 }
 
@@ -456,20 +459,20 @@ City block sizes are used for rhythms, never for exact values or fractions. When
 
 **Right:**
 ```CSS
-.class--one-third {}
-.class--two-tenths {}
-.class--full {}
+.column--one-third {}
+.column--two-tenths {}
+.column--full {}
 ```
 
 **Wrong:**
 ```CSS
-.class--1-3 {}
-.class--2-10 {}
-.class--1 {}
+.column--1-3 {}
+.column--2-10 {}
+.column--1 {}
 
-.class--80 {}
-.class--90 {}
-.class--100 {}
+.column--80 {}
+.column--90 {}
+.column--100 {}
 ```
 
 ### Modifiers for different flex-grows should be written out in full
@@ -539,7 +542,8 @@ Depending on the 'grow value' (default is 1) and the amount of elements within a
 
 - Start with descriptive variables, followed by the functional variables.
 - City block sizes may be used for functional names. Higher number means darker, lower number means lighter. You can use Less or Sass functions to control the variants. It is also possible to use descriptive names for variants.
-- Use variables even for black or white.
+- Use variables even for black or white, because black and white could contain, depending on the styleguide, a tint.
+- Good functional colors are: color-ui; color-ui-accent; color-heading; color-subheading; color-text; color-text-diap; color-cta; color-primary; color-secondary; color-tertiary; color-error; color-success; color-select; color-focus;
 
 **Right:**
 ```Less
@@ -565,10 +569,10 @@ See ['Name that Color'](http://chir.ag/projects/name-that-color/) for example fo
 ### Local variables should start with the name of the block and end with a property
 
 - Local variables are written directly above the block rule in the same file.
-- Local variables may only be used in the block it is created for. Local variables written above the block rule are technically not local in Sass and Less and can be used everywhere. You should never do this.
-- Local variables should function as 'settings' for a whole block.
-- For local variables, combine name of the block and, in some cases, the element with the property. Only use hyphens as delimiters. Do not use the BEM notation.
-- Make as few settings as possible, and try to use block settings for elements. For example border colors are not always set on a block but on different elements within a block. If the border color should be the same for all these elements, create only one block setting.
+- Local variables may only be used in the block it is created for. Local variables written above the block rule are technically not local in Sass or Less and can be used everywhere. You should never do this.
+- Local variables should function as 'settings' for a block.
+- For local variables, combine name of the block and, in some cases, the element with the property. Only use hyphens as delimiters. Do not use the BEM notation for variables.
+- Make as few settings as possible, and try to use block settings for elements. For example border colors are not always set on a block but on different elements within a block. If the border color should be the same for all these elements, create only one block variable.
 - Use local variables mostly for colors.
 - Use global functional colors, not descriptive colors, to set local variables.
 - Within Sass, local variables are set as default variables with '!default'.
@@ -680,7 +684,7 @@ See['Don't use IDs in CSS selectors?'](http://oli.jp/2011/ids/) for further read
 ### Use states as separate classes and add them to existing selectors
 
 - States differ from modifiers. Modifiers are timeless, states are temporarily.
-- States never contain global styling. Style states always in combination with other selectors.
+- States never contain global styling. Style states always in combination with other selectors. This makes it easier to reuse components in different projects.
 - States are allowed to be nested with Less or Sass. Usage is similar to pseudo-classes and pseudo-elements.
 - States always start with 'is'.
 - Preferred state names are listed below.
@@ -768,12 +772,13 @@ simple-selector {
 }
 ```
 
-### Do nest pseudo-classes, pseudo-elements, media queries, and states with Less or Sass
+### Do nest pseudo-classes, pseudo-elements, media queries, states, and BEM block modifiers with Less or Sass
 
 - Makes sure style and behavior of the same selector are grouped.
-- Nested pseudo-classes, pseudo-elements, media queries, and states should also be separated by an empty line.
+- Also BEM block modifiers (not BEM element modifiers) are nested within BEM elements. This makes it easier for block modifiers to influence different elements at the same time and keep the behavior of an element contained within the Less or Sass.
+- Nested pseudo-classes, pseudo-elements, media queries, states, or BEM block modifiers should also be separated by an empty line.
 - The behavior of a pseudo-element should be grouped. Place media queries with rules for a pseudo-element within that pseudo-element. As a result, you don't have to repeat the pseudo-element per media query.
-- They way you nest pseudo-elements and pseudo-classes is very different. Pseudo-classes should be nested within media queries when its styling is different per media query. That means you have to repeat pseudo-classes for every media query. The styling of a pseudo-class is related to the styling of the selector per media query.
+- They way you nest pseudo-elements and pseudo-classes is very different. Pseudo-classes should be nested within media queries when its styling is different per media query. That means you have to repeat pseudo-classes for every media query. The styling of a pseudo-class is related to the styling of the selector per media query. Read [Pseudo-classes vs pseudo-elements](http://www.growingwiththeweb.com/2012/08/pseudo-classes-vs-pseudo-elements.html) to learn more about the difference between pseudo elements and pseudo classes.
 
 **Right:**
 ```Less
@@ -824,24 +829,24 @@ selector {
 
 ## Values
 
-### Color units should be written in 'RGB' or 'RGBa'
+### Color units should be written in 'HSL' or 'HSLa'
 
-- Less or Sass should convert RGB to hex color codes to reduce file size.
-- RGB has the advantage over HSL, because it is better and more consistently available in other systems like brand guidelines, graphic applications, or color systems.
+- HSL or HSLa makes changing color values much easier.
+- Less or Sass should convert HSL to hex color codes to reduce file size.
 
 **Right:**
-```CSS
-rgb(50, 50, 50);
-rgba(50, 50, 50, 0.2);
+```SCSS
+hsl(120, 100%, 50%);
+hsla(120, 100%, 50%, 0.5);
 ```
 
 **Wrong:**
-```CSS
+```SCSS
 #fff;
 #ffffff;
 white;
-hsl(120, 100%, 50%);
-hsla(120, 100%, 50%, 1);
+rgb(50, 50, 50);
+rgba(50, 50, 50, 0.5);
 ```
 
 ### Absolute sizes should be written in pixels instead of ems or rems
