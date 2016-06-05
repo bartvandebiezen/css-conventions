@@ -351,7 +351,7 @@ See ['CSS: CamelCase Seriously Sucks!'](http://csswizardry.com/2010/12/css-camel
 - Name of a modified block or element is a combination between the name and the modifier, divided with two hyphens '--'.
 - Modification means a different version of a block or element.
 - Modifiers are timeless. Use 'states' if a 'different version' is temporarily.
-- A block can be nested within another block if that block is often used by itself. The nested block has at least two class names in this order: (1) as an element of the surrounding block and (2) the block name itself.
+- A block can be nested within another block if that block is often used by itself. The nested block has at least two class names in this order: (1) as an element of the surrounding block and (2) the block name itself. This is called a 'mix'. The element class should only define contextual positioning, never styling.
 - A class does not reflect the full trail of the DOM. Only one block or element is allowed within a class name.
 - When is a block a modified block or a complete new block? Is it '.small-project' or 'project--small'? A modified block still inherits a lot of styling from the original block. A new block is completely independent from the original block. You determine the tipping point, but if in doubt create a new block.
 - It is not allowed to give an element two block classes or two element classes.
